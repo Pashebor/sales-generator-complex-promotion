@@ -1,0 +1,64 @@
+.guarantees{
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 0 0;
+  padding-bottom: 44px;
+
+  .separatorbottom{
+    #bottom-triangle{
+      fill: rgb(239, 239, 239);
+    }
+  }
+  .btn{
+    &-block{
+      margin-top: 31px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 44px;
+    }
+  }
+  &__title{
+    font-family: $headers-font-regular;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &-info{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin: 60px 0 -15px 0;
+    /*border: 1px dotted #ccc;*/
+    /*padding: 40px 0;*/
+    &__item{
+      width: 30%;
+      img{
+        width: 128px;
+        height: 128px;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+
+      @each $tv in (h4, p) {
+        #{$tv}{
+          font-size: 15px;
+          text-align: center;
+          font-family: $headers-font-regular;
+        }
+        @if $tv == h4 {
+          #{$tv}{
+            font-family: $headers-font-regular;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}

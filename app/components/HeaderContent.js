@@ -13,7 +13,7 @@ class HeaderContent extends Component{
             formData[field] = this.refs[field].mask.getValue();
         }
         this.props.sendClientsCallback(formData);
-        yaCounter44418460.reachGoal('KNOW');
+        /*yaCounter44418460.reachGoal('KNOW');*/
         return true;
     }
 
@@ -46,7 +46,7 @@ class HeaderContent extends Component{
                         <h3 className="header__content-subtitle">Гарантированно приведем на Ваш сайт тысячи новых клиентов</h3>
                         <p className="header__content-text">Финансовая гарантия результата. Рост продаж. Продвижение только по целевым запросам.</p>
                         <p className="header__content-text">Снижение стоимости привлечения клиента. Просчет окупаемости.</p>
-                        <h5 className="know-form__title">Узнайте, сколько новых клиентов Вы можете получить с сайта</h5>
+                        <h5 className="know-form__title">Узнайте, сколько новых клиентов Вы можете получить с сайта!</h5>
                         {this.clientsNotification()}
                         <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
                             <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
