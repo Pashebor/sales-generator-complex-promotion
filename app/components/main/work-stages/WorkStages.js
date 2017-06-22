@@ -108,7 +108,7 @@ class WorkStages extends React.Component{
                                  <li>Составление финального семантического ядра</li>
                              </ul>
                              <figure>
-                                 <img alt="СОСТАВЛЕНИЕ СЕМАНТИЧЕСКОГО ЯДРА" title="СОСТАВЛЕНИЕ СЕМАНТИЧЕСКОГО ЯДРА" src="images/semantic-core.png"/>
+                                 <img alt="СОСТАВЛЕНИЕ СЕМАНТИЧЕСКОГО ЯДРА" title="СОСТАВЛЕНИЕ СЕМАНТИЧЕСКОГО ЯДРА" src="images/semantic.png"/>
                              </figure>
                          </div>
                      </div>
@@ -154,7 +154,7 @@ class WorkStages extends React.Component{
                                  <li>Проверка корректности отображения сайта в разных браузерах</li>
                              </ul>
                              <figure>
-                                 <img alt="УВЕЛИЧЕНИЕ КОНВЕРСИОННОСТИ РЕСУРСА" title="УВЕЛИЧЕНИЕ КОНВЕРСИОННОСТИ РЕСУРСА" src="images/expert-content.png"/>
+                                 <img alt="УВЕЛИЧЕНИЕ КОНВЕРСИОННОСТИ РЕСУРСА" title="УВЕЛИЧЕНИЕ КОНВЕРСИОННОСТИ РЕСУРСА" src="images/conversion.png"/>
                              </figure>
                          </div>
                      </div>
