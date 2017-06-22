@@ -1,0 +1,29 @@
+.wdyg{
+  @extend .guarantees;
+  margin: 0;
+  padding-top: 70px;
+  color: white;
+  background-image: radial-gradient(rgb(33, 33, 33) 0%, black 100%);
+  color: rgb(255, 255, 255);
+  &-info{
+    @extend .guarantees-info;
+    margin-bottom: 68px;
+    &__item{
+      @extend .guarantees-info__item;
+      width: 23%;
+      img{
+        width: 108px;
+        height: 108px;
+      }
+    }
+  }
+  &__title{
+    @extend .work-stages__title;
+  }
+  .separatorbottom{
+    #bottom-triangle{
+      fill: white;
+    }
+  }
+
+}

@@ -1,0 +1,53 @@
+.facts{
+  padding-top: 70px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 44px;
+
+  .separatorbottom{
+    #bottom-triangle{
+      fill: #bfbfbf;
+    }
+  }
+  .btn{
+    &-block{
+      margin-top: 31px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 44px;
+    }
+  }
+  &__title{
+    @extend .guarantees__title;
+    margin-top: 0;
+    font-family: $headers-font-regular;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &-info{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin: 60px 0 68px 0;
+    &__item{
+      width: 30%;
+      img{
+        width: 108px;
+        height: 108px;
+        display: block;
+        margin: auto;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+      p{
+        font-size: 15px;
+        text-align: center;
+        font-family: $headers-font-regular;
+        margin-top: 15px;
+      }
+    }
+  }
+}

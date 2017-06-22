@@ -1,0 +1,238 @@
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .btn--callback{
+    margin-left: 0px;
+  }
+
+  .header, .work-stages, .guarantees, .wdyg, .cl-words, .results, .recomendations, .b-clients, .facts{
+    overflow: hidden;
+  }
+  .work-stages, .guarantees, .wdyg, .results, .cl-words, .recomendations, .b-clients, .facts{
+    padding-top: 30px;
+  }
+  .main{
+    margin: 0;
+  }
+
+  .nav{
+    flex-direction: column;
+    &__tel{
+      margin-left: 0px;
+      width: 100%;
+      text-align: center;
+    }
+    &__title{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+      left: 0;
+      padding: 20px;
+    }
+  }
+
+  .header{
+    &__content{
+      padding: 20px 15px 0 15px;
+      &-title{
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+      }
+      &-text{
+        text-align: center;
+        padding: 0 10px;
+        font-size: 20px;
+      }
+    }
+    &-content-background{
+      background-size: cover;
+      background: url("../images/headerbackground.png") no-repeat 70% 100%;
+    }
+  }
+  .know-form{
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 44px;
+
+    input[type="text"], input[type="button"], input[type="submit"]{
+      width: 85%;
+      margin-left: 0px;
+    }
+
+    input[type="button"], input[type="submit"]{
+      margin: 20px 0 0 0;
+    }
+
+    &__title{
+      text-align: center;
+    }
+  }
+
+  .separatorbottom {
+    width: 140%;
+    height: 33px;
+    #bottom-triangle{
+      width: 140%;
+      height: 33px;
+      position: relative;
+      right: 35%;
+    }
+  }
+
+  .guarantees{
+    &__title{
+      font-size: 20px;
+      line-height: 25px;
+    }
+    &-info{
+      flex-flow: column;
+      margin: 20px 0 0 0;
+      padding: 20px 0;
+      &__item{
+        width: 100%;
+        align-self: center;
+      }
+    }
+  }
+
+  .work-stages{
+    .btn{
+      white-space: normal;
+    }
+  }
+  .stage-count:nth-child(2n+1){
+    .stage{
+      .stage__description{
+        flex-flow: column;
+      }
+    }
+  }
+  .stage-count{
+    .stage{
+      padding: 0 5px;
+      .stage__description{
+        flex-flow: column;
+        ul{
+          width: 100%;
+        }
+        figure{
+          width: 100%;
+          img{
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+
+  .results{
+    &__title{
+      margin-top: 0;
+    }
+    &-info{
+      flex-flow: row wrap;
+      &__item{
+        width: 100%;
+      }
+    }
+  }
+
+  .recomendations-info{
+    @for $item from 1 through 5 {
+      &__item:nth-child(#{$item}) {
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  .cl-words-info__director, .cl-words-info__desc{
+    width: 100%;
+  }
+
+  .facts-info{
+    flex-flow: column;
+    margin: 30px 0 30px 0;
+    &__item{
+      width: 100%;
+    }
+  }
+
+  .b-clients {
+    .know-form {
+      margin-top: 20px;
+      input[type="text"], input[type=button] {
+        width: 90%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .b-clients .know-form input[type="text"]:nth-child(2){
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+
+  .footer{
+    &-container{
+      margin-top: 40px;
+      flex-direction: column;
+      align-items: center;
+    }
+    @each $footer-item in (__logo, __address, __phone) {
+      &#{$footer-item} {
+        width: 100%;
+      }
+      @if($footer-item == __address) {
+        &#{$footer-item} {
+          margin-bottom: 0px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .top-button-block{
+      bottom: 40px;
+      .top-button{
+        width: 40px;
+        height: 40px;
+        line-height: 35px;
+        &::before{
+          font-size: 35px;
+        }
+      }
+    }
+  }
+
+  .popup-overlay .popup-form{
+    width: 90%;
+    input[type="submit"]{
+      width: 100%;
+    }
+  }
+
+  .popup-slider-overlay{
+    .popup-slider{
+      width: 95%;
+      .slick-next, .slick-prev{
+        display: none !important;
+      }
+    }
+  }
+
+  .popup-overlay .popup-fullcase{
+    width: 98%;
+    &__close{
+      font-size: 35px;
+    }
+  }
+
+  .submit-btn{
+    margin-left: 0 !important;
+    width: 85% !important;
+    padding: 5px 0 !important;
+    white-space: normal;
+  }
+
+
+}
