@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {showModal, setTypeAudit} from '../../../actions/index';
+import {showModal} from '../../../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Recomendations extends Component{
     callPopupHandler(event) {
-        this.props.setTypeAudit(event.target.getAttribute('data-audit'));
+
         this.props.showModal(true);
         /*switch (event.target.getAttribute('data-audit')) {
          case 'Поднять позиции в поисковых системах':
@@ -35,7 +35,7 @@ class Recomendations extends Component{
                             <div className="recomendations-info__item">
                                 <img src="images/specific-result.svg" alt="КОНКРЕТНЫЙ РЕЗУЛЬТАТ" title="КОНКРЕТНЫЙ РЕЗУЛЬТАТ" data-audit="КОНКРЕТНЫЙ РЕЗУЛЬТАТ" onClick={this.callPopupHandler.bind(this)}/>
                                 <h4>КОНКРЕТНЫЙ РЕЗУЛЬТАТ</h4>
-                                <p>Прописываем в договоре результат по трафику</p>
+                                <p>Прописываем в договоре <br/> результат по трафику</p>
                             </div>
                             <div className="recomendations-info__item">
                                 <img src="images/specialists-team.svg" alt="КОМАНДА СПЕЦИАЛИСТОВ" title="КОМАНДА СПЕЦИАЛИСТОВ"  data-audit="КОМАНДА СПЕЦИАЛИСТОВ" onClick={this.callPopupHandler.bind(this)}/>
@@ -55,7 +55,7 @@ class Recomendations extends Component{
                             <div className="recomendations-info__item">
                                 <img src="images/key-site.svg" alt="РАБОТА НАД САЙТОМ ПОД КЛЮЧ" title="РАБОТА НАД САЙТОМ ПОД КЛЮЧ"  data-audit="РАБОТА НАД САЙТОМ ПОД КЛЮЧ" onClick={this.callPopupHandler.bind(this)}/>
                                 <h4>РАБОТА НАД САЙТОМ ПОД КЛЮЧ</h4>
-                                <p>Вы забываете о сайте и просто получаете заявки</p>
+                                <p>Вы забываете о сайте <br/> и просто получаете заявки</p>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, setTypeAudit}, dispatch);
+    return bindActionCreators({showModal}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recomendations);

@@ -32,6 +32,11 @@
   }
   .btn-block{
     margin-bottom: 0;
+    span{
+      display: block;
+      margin: auto;
+      font-family: $primary-font;
+    }
   }
   .separatorbottom{
     #bottom-triangle{

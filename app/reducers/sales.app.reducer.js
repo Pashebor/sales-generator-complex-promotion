@@ -1,4 +1,4 @@
-import {GET_MODAL_FORM, OPEN_FULL_CASE, OPEN_SLIDER, SEND_MESSAGE_SUCCESS, SEND_CLIENTS_SUCCESS, RATE_TYPE, AUDITS_REQUEST, NULL_CALLBACKS, SCROLLER_OPACITY} from '../actions/index';
+import {GET_MODAL_FORM, OPEN_FULL_CASE, OPEN_SLIDER, SEND_MESSAGE_SUCCESS, SEND_CLIENTS_SUCCESS, NULL_CALLBACKS, SCROLLER_OPACITY, CONTRACT_FORM, WORK_PLAN_FORM} from '../actions/index';
 
 const initialState = {
     modalShow: false,
@@ -10,11 +10,19 @@ const initialState = {
     clientsResp: null,
     typeRate: '',
     opacity: '',
-    auditType: ''
+    auditType: '',
+    contract: false,
+    workPlan: false
 };
 
 const salesReducer =  ( state = initialState, action) => {
     switch (action.type) {
+        case WORK_PLAN_FORM:
+            return Object.assign({}, state, {workPlan: action.show});
+            break;
+        case CONTRACT_FORM:
+            return Object.assign({}, state, {contract: action.show});
+            break;
         case GET_MODAL_FORM:
             return Object.assign({}, state, {modalShow: action.show});
             break;
@@ -32,12 +40,6 @@ const salesReducer =  ( state = initialState, action) => {
             break;
         case SEND_CLIENTS_SUCCESS:
             return Object.assign({}, state, {clientsResp: action.payload});
-            break;
-        case RATE_TYPE:
-            return Object.assign({}, state, {typeRate: action.payload});
-            break;
-        case AUDITS_REQUEST:
-            return Object.assign({}, state, {auditType: action.payload});
             break;
         case NULL_CALLBACKS:
             return Object.assign({}, state, {responseJson: action.valOne, clientsResp: action.valTwo});

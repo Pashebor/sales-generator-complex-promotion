@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {sendClientsCallback} from '../../../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
-class BringClients extends Component{
+class BringClients extends React.Component{
 
     btnSubmitHandler(e) {
         e.preventDefault();

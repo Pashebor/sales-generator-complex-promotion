@@ -15,6 +15,11 @@
         width: 108px;
         height: 108px;
       }
+      &:last-child{
+        p{
+          width: 108%;
+        }
+      }
     }
   }
   &__title{

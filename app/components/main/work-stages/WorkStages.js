@@ -1,15 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {sendClientsCallback} from '../../../actions/index';
+import {sendClientsCallback, workPlanShow, showModal} from '../../../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 class WorkStages extends React.Component{
+    constructor(props) {
+        super(props);
+        this.orderWorkPlanHandler = this.orderWorkPlanHandler.bind(this);
+    }
+
+    orderWorkPlanHandler () {
+        this.props.workPlanShow(true);
+        this.props.showModal(true);
+    }
 
     btnSubmitHandler(e) {
         e.preventDefault();
-        let formData = {'form-name': 'know'};
+        let formData = {'form-name': 'work-stages'};
         for (let field in this.refs) {
             formData[field] = this.refs[field].mask.getValue();
         }
@@ -87,7 +96,7 @@ class WorkStages extends React.Component{
                   </div>
                   <ScrollableAnchor id={'three'}>
                       <div className="btn-block">
-                          <a href="#" className="btn">Скачать пример плана работ на 2 месяца! PDF, 2.5 мб.</a>
+                          <button className="btn" onClick={this.orderWorkPlanHandler}>Скачать пример плана работ на 2 месяца! <span>PDF, 2.5 мб.</span></button>
                       </div>
                   </ScrollableAnchor>
                   <a className="arrow-down" href="#three"></a>
@@ -182,7 +191,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({sendClientsCallback}, dispatch);
+    return bindActionCreators({sendClientsCallback, workPlanShow, showModal}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkStages);

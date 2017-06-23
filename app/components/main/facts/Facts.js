@@ -14,15 +14,15 @@ const Facts = () => {
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/cliensts-grow.svg" alt="Привлечение клиентов" title="Привлечение клиентов" data-audit="Привлечение клиентов"/>
-                                <p>Мы привлекли на сайты наших клиентов <br/><strong>7 990 502</strong> посетителей</p>
+                                <p>Мы привлекли на сайты наших <br/> клиентов <strong>7 990 502</strong> посетителей</p>
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/money.svg" alt="Работа с проектами" title="Работа с проектами"  data-audit="Работа с проектами"/>
-                                <p>Мы работаем с проектами от <strong>40</strong> тыс. рублей</p>
+                                <p>Мы работаем с проектами <br/>от <strong>40</strong> тыс. рублей</p>
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/traffic-grow.svg" alt="Цена проектов" title="Цена проектов"  data-audit="Цена проектов"/>
-                                <p>Средний рост трафика наших клиентов за прошедший <br/>год <strong>724 %</strong></p>
+                                <p>Средний рост трафика наших клиентов <br/>за прошедший год <strong>724 %</strong></p>
                             </div>
                         </div>
                     </div>

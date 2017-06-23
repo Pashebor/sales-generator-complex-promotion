@@ -6,11 +6,25 @@ export const OPEN_FULL_CASE = 'openCase';
 export const OPEN_SLIDER = 'openSlider';
 export const SEND_MESSAGE_SUCCESS = 'sendRequestCallback';
 export const SEND_CLIENTS_SUCCESS = 'knowClients';
-export const RATE_TYPE = 'setTypeRate';
-export const AUDITS_REQUEST = 'setTypeAudit';
 export const NULL_CALLBACKS = 'nullCallbacks';
 export const SCROLLER_OPACITY = 'setOpacity';
+export const CONTRACT_FORM = 'contractShow';
+export const WORK_PLAN_FORM = 'workPlanShow';
 /*ACTIONS*/
+
+export const workPlanShow = (value) => {
+    return{
+        type: WORK_PLAN_FORM,
+        show: value
+    }
+};
+
+export const contractShow = (value) => {
+    return{
+        type: CONTRACT_FORM,
+        show: value
+    }
+};
 
 export const setOpacity = (opacity) => {
         return {
@@ -42,19 +56,6 @@ export const openSlider = (uri,logicValue) => {
    }
 };
 
-export const setTypeRate = type => {
-    return{
-        type: RATE_TYPE,
-        payload: type
-    }    
-};
-
-export const setTypeAudit = type => {
-    return{
-        type: AUDITS_REQUEST,
-        payload: type
-    }
-};
 
 export const nullCallbacks = (val1, val2) => {
    return{

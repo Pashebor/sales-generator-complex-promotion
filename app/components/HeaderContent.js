@@ -8,7 +8,7 @@ class HeaderContent extends Component{
 
     btnSubmitHandler(e) {
         e.preventDefault();
-        let formData = {'form-name': 'know'};
+        let formData = {'form-name': 'header'};
         for (let field in this.refs) {
             formData[field] = this.refs[field].mask.getValue();
         }
