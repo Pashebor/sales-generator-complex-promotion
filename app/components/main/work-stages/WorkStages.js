@@ -96,7 +96,7 @@ class WorkStages extends React.Component{
                   </div>
                   <ScrollableAnchor id={'three'}>
                       <div className="btn-block">
-                          <button className="btn" onClick={this.orderWorkPlanHandler}>Скачать пример плана работ на 2 месяца! <span>PDF, 2.5 мб.</span></button>
+                          <button className="btn" onClick={this.orderWorkPlanHandler}>Скачать пример плана работ на 2 месяца <span>PDF, 2.5 мб.</span></button>
                       </div>
                   </ScrollableAnchor>
                   <a className="arrow-down" href="#three"></a>

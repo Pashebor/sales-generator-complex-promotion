@@ -54,7 +54,7 @@ class Guarantees extends React.Component{
                         </div>
                     </div>
                     <div className="btn-block">
-                        <button className="btn" onClick={this.orderAnContractHandler}>Скачать пример договора!</button>
+                        <button className="btn" onClick={this.orderAnContractHandler}>Скачать пример договора <span>PDF, 2.15 мб.</span></button>
                     </div>
               </div>
                 <div className="separatorbottom">

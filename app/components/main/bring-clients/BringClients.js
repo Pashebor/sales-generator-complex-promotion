@@ -11,8 +11,8 @@ class BringClients extends React.Component{
         e.preventDefault();
         let formData = {'form-name': 'know-bottom'};
 
-        formData.name = this.refs["name"].value;
-        formData.phone = this.refs["phone"].mask.getValue();
+        formData.name = this.refs.name.value;
+        formData.phone = this.refs.phone.mask.getValue();
         this.props.sendClientsCallback(formData);
         /*yaCounter44418460.reachGoal('KNOW');*/
         return true;
