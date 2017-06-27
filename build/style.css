@@ -6690,8 +6690,10 @@ body {
   margin: 0;
   padding-top: 70px;
   background-image: radial-gradient(white 0%, #ececec 74%); }
+  .recomendations .btn-block {
+    margin-top: 0; }
   .recomendations-info {
-    margin-bottom: 68px;
+    margin: 40px 0 38px 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
@@ -6932,25 +6934,36 @@ body {
   position: relative;
   background-color: #09090d;
   color: white; }
+  .footer__address {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2; }
   .footer__logo {
     -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
+    transition: all 0.3s ease-in-out;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
     .footer__logo img {
       width: 200px;
       height: 61px; }
     .footer__logo:hover {
       -webkit-transform: scale(1.05);
               transform: scale(1.05); }
-  .footer__phone a {
-    font-size: 25px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    top: -10px;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    .footer__phone a:hover {
-      text-shadow: 0px 0px 2px white; }
+  .footer__phone {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+    .footer__phone a {
+      font-size: 25px;
+      text-decoration: none;
+      color: white;
+      position: relative;
+      top: -10px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .footer__phone a:hover {
+        text-shadow: 0px 0px 2px white; }
   .footer__logo {
     text-align: center; }
   .footer__address {
@@ -6958,7 +6971,7 @@ body {
   .footer__phone {
     text-align: center; }
   .footer-container {
-    margin-top: 80px;
+    margin-top: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -7268,7 +7281,7 @@ body {
   margin: auto; }
   .know-form__title {
     font-size: 18px;
-    margin: 55px 0 25px 0;
+    margin: 55px 0 15px 0;
     font-family: OpenSansBold;
     text-align: center; }
   .know-form__notification {
@@ -7320,7 +7333,7 @@ body {
   top: -0.5px;
   overflow: hidden; }
   .separatortop #triangle {
-    height: 34px;
+    height: 18px;
     width: 100%;
     fill: #bfbfbf; }
 

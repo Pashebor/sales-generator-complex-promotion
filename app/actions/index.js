@@ -7,10 +7,18 @@ export const OPEN_SLIDER = 'openSlider';
 export const SEND_MESSAGE_SUCCESS = 'sendRequestCallback';
 export const SEND_CLIENTS_SUCCESS = 'knowClients';
 export const NULL_CALLBACKS = 'nullCallbacks';
-export const SCROLLER_OPACITY = 'setOpacity';
+export const SCROLLER_OPACITY = 'setStyles';
 export const CONTRACT_FORM = 'contractShow';
 export const WORK_PLAN_FORM = 'workPlanShow';
+export const RECOMENDATION_FORM = 'guaranteesShow';
 /*ACTIONS*/
+
+export const guaranteesShow = (value) => {
+    return{
+        type: RECOMENDATION_FORM,
+        show: value
+    }
+}
 
 export const workPlanShow = (value) => {
     return{
@@ -26,10 +34,10 @@ export const contractShow = (value) => {
     }
 };
 
-export const setOpacity = (opacity) => {
+export const setStyles = (opacity, pointerEvents, cursor) => {
         return {
             type: SCROLLER_OPACITY,
-            opacity: opacity
+            payload: {opacity: opacity, pointerEvents: pointerEvents, cursor: cursor }
         }
 };
 

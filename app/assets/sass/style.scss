@@ -50,7 +50,7 @@
   margin: auto;
   &__title{
     font-size: 18px;
-    margin: 55px 0 25px 0;
+    margin: 55px 0 15px 0;
     font-family: $headers-font-bold;
     text-align: center;
   }
@@ -106,7 +106,7 @@
   top: -0.5px;
   overflow: hidden;
   #triangle{
-    height: 34px;
+    height: 18px;
     width: 100%;
     fill: #bfbfbf;
   }

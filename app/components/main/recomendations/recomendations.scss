@@ -3,9 +3,12 @@
   margin: 0;
   padding-top: 70px;
   background-image: radial-gradient(rgb(255, 255, 255) 0%, rgb(236, 236, 236) 74%); ;
+  .btn-block{
+    margin-top: 0;
+  }
   &-info{
     @extend .guarantees-info;
-    margin-bottom: 68px;
+    margin: 40px 0 38px 0;
     flex-flow: row wrap;
     &__item{
       @extend .guarantees-info__item;

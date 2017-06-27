@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {showModal, sendCallback, nullCallbacks, contractShow, workPlanShow} from '../actions/index';
+import {showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, guaranteesShow} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 
 class ModalForm extends Component{
     isShow() {
-        console.log(this.props.formState);
         if (this.props.formState.modalShow) {
              return {
                  display: 'block',
@@ -54,6 +53,11 @@ class ModalForm extends Component{
             formData.email = this.refs.email.value;
             formData.phone = this.refs.phone.mask.getValue();
             this.props.sendCallback(formData);
+        } else if(this.props.formState.guarantees) {
+            formData['form-name'] = 'guarantees-order';
+            formData.email = this.refs.email.value;
+            formData.phone = this.refs.phone.mask.getValue();
+            this.props.sendCallback(formData);
         } else {
             for (let field in this.refs) {
                 formData[field] = this.refs[field].mask.getValue();
@@ -71,6 +75,9 @@ class ModalForm extends Component{
         } else if (this.props.formState.workPlan) {
             this.refs.email.value = '';
             this.refs.phone.mask.setValue('');
+        } else if(this.props.formState.guarantees) {
+            this.refs.email.value = '';
+            this.refs.phone.mask.setValue('');
         } else {
             for (let fieldClear in this.refs) {
                 this.refs[fieldClear].mask.setValue('');
@@ -80,6 +87,7 @@ class ModalForm extends Component{
         this.props.nullCallbacks(null, null);
         this.props.contractShow(false);
         this.props.workPlanShow(false);
+        this.props.guaranteesShow(false);
     }
 
     formClickHandler(e){
@@ -107,6 +115,21 @@ class ModalForm extends Component{
                 <div className="popup-form">
                     <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
                     <p>Оставьте Ваши контакты и мы отправим Вам пример плана работ на электронную почту</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Ваш Email <span>*</span></label>
+                        <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Телефон <span>*</span></label>
+                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                    </form>
+                </div>
+            )
+        } else if (this.props.formState.guarantees) {
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Оставьте Ваши контакты и мы отправим ознакомление с гарантиями в договоре <br/> Вам на почту</p>
                     {this.mailNotification()}
                     <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                         <label>Ваш Email <span>*</span></label>
@@ -150,7 +173,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, sendCallback, nullCallbacks, contractShow, workPlanShow}, dispatch);
+    return bindActionCreators({showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, guaranteesShow}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);

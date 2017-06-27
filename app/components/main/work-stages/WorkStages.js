@@ -172,7 +172,7 @@ class WorkStages extends React.Component{
                  {this.clientsNotification()}
                  <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
                      <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
-                     <input type="submit" className="btn submit-btn"  value="Узнать сколько получу клиентов!"/>
+                     <input type="submit" className="btn submit-btn"  value="Узнать сколько получу клиентов"/>
                  </form>
             </div>
                 <div className="separatorbottom">

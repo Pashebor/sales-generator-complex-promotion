@@ -10,11 +10,11 @@ const Facts = () => {
                         <div className="facts-info">
                             <div className="facts-info__item">
                                 <img src="images/specialists.svg" alt="Специалисты" title="Специалисты" data-audit="Специалисты"/>
-                                <p>В нашей команде более <br/> <strong>67</strong> специалистов</p>
+                                <p>В нашей команде <br/> <strong>67</strong> специалистов</p>
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/cliensts-grow.svg" alt="Привлечение клиентов" title="Привлечение клиентов" data-audit="Привлечение клиентов"/>
-                                <p>Мы привлекли на сайты наших <br/> клиентов <strong>7 990 502</strong> посетителей</p>
+                                <p>Мы привлекли на сайты наших клиентов <strong>14 980 602</strong> посетителей</p>
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/money.svg" alt="Работа с проектами" title="Работа с проектами"  data-audit="Работа с проектами"/>

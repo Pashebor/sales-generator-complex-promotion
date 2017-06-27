@@ -50,7 +50,7 @@ class BringClients extends React.Component{
                         <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
                             <input className="form-control" placeholder="Имя *" type="text" ref="name" required/>
                             <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
-                            <input type="submit" className="btn submit-btn"  value="Получить индивидуальное предложение!"/>
+                            <input type="submit" className="btn submit-btn"  value="Получить индивидуальное предложение"/>
                         </form>
 
                 <ScrollableAnchor id={'how-many-clients'}>
