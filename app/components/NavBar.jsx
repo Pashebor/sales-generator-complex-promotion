@@ -17,7 +17,10 @@ class NavBar extends Component{
           <nav className="container nav">
               <div className="nav__logo"><a href="http://sales-generator.ru"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></a></div>
               <h2 className="nav__title">Агентство Интернет-маркетинга</h2>
-              <a className="nav__tel" href="tel:88003331293">8 (800) 333 12 93</a>
+              <div className="nav__tel">
+                  <a  href="tel:88003331293">8 (800) 333 12 93</a>
+                  <a  href="tel:84951250840">8 (495) 125 08 40</a>
+              </div>
               <button className="btn btn--callback" onClick={this.openModalHandler.bind(this)}>Обратный звонок</button>
           </nav>
         );

@@ -44,8 +44,6 @@ class HeaderContent extends Component{
                     <div className="container header__content">
                         <h2 className="header__content-title">КОМПЛЕКСНОЕ ПРОДВИЖЕНИЕ САЙТА В <span>ТОП-3</span> ЯНДЕКСА И GOOGLE</h2>
                         <h3 className="header__content-subtitle">Гарантированно приведем на Ваш сайт тысячи новых клиентов</h3>
-                        <p className="header__content-text">Финансовая гарантия результата. Рост продаж. Продвижение только по целевым запросам.</p>
-                        <p className="header__content-text">Снижение стоимости привлечения клиента. Просчет окупаемости.</p>
                         <h5 className="know-form__title">Узнайте, сколько новых клиентов Вы можете получить с сайта!</h5>
                         {this.clientsNotification()}
                         <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>

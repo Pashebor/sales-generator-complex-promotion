@@ -7,6 +7,36 @@
 @import "modal-form";
 
 
+/*Personal data block*/
+#app .personal-data{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  .form-control{
+    height: 18px;
+    width: 18px;
+  }
+  p{
+    font-size: 16px;
+    padding: 0;
+    display: block;
+    line-height: 27px;
+    margin-left: 4px;
+  }
+}
+/********************/
+
+#app .confidential-link {
+  color: #60b57e;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+  font-weight: 600;
+  &:hover{
+    color: white;
+  }
+}
+
 .btn{
   font-family: $headers-font-bold;
   background-color: rgb(96, 181, 126);
@@ -108,7 +138,7 @@
   #triangle{
     height: 18px;
     width: 100%;
-    fill: #bfbfbf;
+    fill: #E0E0E0;
   }
 }
 

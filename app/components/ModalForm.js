@@ -5,6 +5,14 @@ import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 
 class ModalForm extends Component{
+    personalAgreement() {
+        return (
+            <div className="personal-data">
+                <input type="checkbox" className="form-control" required/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
+            </div>
+        );
+    }
+
     isShow() {
         if (this.props.formState.modalShow) {
              return {
@@ -106,7 +114,8 @@ class ModalForm extends Component{
                         <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
                         <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
                 </div>
             )
@@ -121,7 +130,8 @@ class ModalForm extends Component{
                         <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
                         <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
                 </div>
             )
@@ -136,7 +146,8 @@ class ModalForm extends Component{
                         <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
                         <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
                 </div>
             )
@@ -151,7 +162,8 @@ class ModalForm extends Component{
                         <MaskedInput  mask="11:11"type="text" ref="callback" name="callback" className="form-control"/>
                         <label>Телефон <span>*</span></label>
                         <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
                 </div>
             )
