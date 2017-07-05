@@ -113,23 +113,23 @@
 @media screen and (min-width: 1501px){
   .header{
     &__content{
-      padding: 120px 0 140px 0;
+      padding: 210px 0 310px 0;
     }
   }
   .header-content-background{
-    background-position: 50% center;
-    background-size: 80%;
+    background-position: 90% 80%;
+    background-size: 145%;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1500px){
   .header{
     &__content{
-      padding: 100px 0 110px 0;
+      padding: 120px 0 150px 0;
     }
   }
   .header-content-background{
-    background-position: 50% center;
-    background-size: 80%;
+    background-position: 90% 80%;
+    background-size: 145%;
   }
 }

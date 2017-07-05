@@ -9,9 +9,7 @@ var root = path.resolve(__dirname, 'app');
 
 module.exports = {
     context: path.join(__dirname, 'app'),
-    devServer: {
-        outputPath: path.join(__dirname, 'build')
-    },
+
     entry: {
         sales_generator_lp: path.resolve(root, 'sales.generator.lp.jsx'),
         style: path.resolve(root, 'assets/sass/style.scss'),
@@ -22,7 +20,6 @@ module.exports = {
         path: __dirname + '/build',
         filename: '[name].js'
     },
-
     watch: true,
 
     module: {
