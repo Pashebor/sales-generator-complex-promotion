@@ -50,7 +50,7 @@ class Guarantees extends React.Component{
                         <div className="guarantees-info__item">
                             <img src="images/financial-guarantees.svg" alt="ФИНАНСОВЫЕ ГАРАНТИИ" title="ФИНАНСОВЫЕ ГАРАНТИИ"   onClick={this.callPopupHandler}/>
                             <h4>ФИНАНСОВЫЕ ГАРАНТИИ</h4>
-                            <p>Мы вернем Вам все Ваши деньги если не достигнем результатов в срок</p>
+                            <p>Мы вернем Вам все Ваши деньги, если не достигнем результатов в срок</p>
                         </div>
                     </div>
                     <div className="btn-block">
