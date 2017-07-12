@@ -20,6 +20,12 @@ module.exports = {
         path: __dirname + '/build',
         filename: '[name].js'
     },
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
     watch: true,
 
     module: {

@@ -7,7 +7,7 @@
 @import "./../../components/main/bring-clients/bring-clients";
 
 .main{
-  margin: 70px 0 0 0;
+  margin: 40px 0 0 0;
 }
 
 /*Result block START*/
@@ -50,7 +50,7 @@
   }
 
   &__title{
-    @extend .guarantees__title;
+    @extend .work-stages__title;
     margin-top: 0;
     margin-bottom: 20px;
   }
@@ -113,16 +113,9 @@
 @media screen and (min-width: 1501px){
   .header{
     &__content{
-      padding: 160px 0 190px 0;
-      &-title{
-        font-size: 35px;
-      }
+      padding: 200px 0 200px 0;
       &-text:first-of-type{
         margin-top: 40px;
-      }
-      &-text{
-        font-size: 24px;
-        line-height: 24px;
       }
     }
   }
@@ -135,7 +128,7 @@
 @media screen and (min-width: 1200px) and (max-width: 1500px){
   .header{
     &__content{
-      padding: 120px 0 150px 0;
+      padding: 200px 0 200px 0;
     }
   }
   .header-content-background{

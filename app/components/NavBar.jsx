@@ -21,7 +21,7 @@ class NavBar extends Component{
                   <a  href="tel:88003331293">8 (800) 333 12 93</a>
                   <a  href="tel:84951250840">8 (495) 125 08 40</a>
               </div>
-              <button className="btn btn--callback" onClick={this.openModalHandler.bind(this)}>Обратный звонок</button>
+              <button className="btn btn--callback" onClick={this.openModalHandler.bind(this)}>Заказать звонок</button>
           </nav>
         );
     };
