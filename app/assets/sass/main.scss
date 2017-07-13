@@ -5,6 +5,7 @@
 @import "./../../components/main/clients-words/clients-words";
 @import "./../../components/main/facts/facts";
 @import "./../../components/main/bring-clients/bring-clients";
+@import "./../../components/main/key-digits/key-digits";
 
 .main{
   margin: 40px 0 0 0;
@@ -16,6 +17,14 @@
   position: relative;
   background-color: white;
 
+  .btn{
+    display: block;
+    margin: 56px auto 0 auto;
+  }
+  .slick-dots li button::before{
+    content: '\f111';
+    font-size: 20px;
+  }
   .slick-prev:before {
     font-family: FontAwesome;
     content: '\f104';
@@ -38,7 +47,7 @@
     }
 
     &-next{
-      right: 10px;
+      right: 1px;
       position: absolute;
       z-index: 1;
     }
@@ -75,8 +84,8 @@
     &__column{
       display: flex;
       flex-flow: column;
-      width: 98%;
-      padding: 20px 0;
+      width: 90%;
+      padding: 20px 0 0 0;
       margin: 0;
       cursor: zoom-in;
       &__item{
@@ -85,6 +94,7 @@
         margin-bottom: 5px;
         img{
           width: 100%;
+          box-shadow: 0 0 5px #cccccc;
         }
         &:hover{
           box-shadow: 0 0 2px 2px #61bd70;

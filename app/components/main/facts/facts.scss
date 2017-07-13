@@ -1,5 +1,5 @@
 .facts{
-  padding-top: 70px;
+  padding-top: 40px;
   position: relative;
   z-index: 1;
   padding-bottom: 44px;
@@ -29,12 +29,12 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    margin: 60px 0 68px 0;
+    margin: 30px 0 0 0;
     &__item{
-      width: 30%;
+      width: 19%;
       img{
-        width: 108px;
-        height: 108px;
+        padding: 0 10px;
+        width: 100%;
         display: block;
         margin: auto;
         transition: all 0.3s ease-in-out;
@@ -43,15 +43,11 @@
         }
       }
       p{
-        font-size: 17px;
-        text-align: center;
+        font-size: 15px;
+        text-align: left;
         font-family: $headers-font-regular;
-        margin-top: 15px;
-      }
-      &:last-child{
-        p{
-          width: 117%;
-        }
+        margin-top: 5px;
+        padding: 0 10px;
       }
     }
   }

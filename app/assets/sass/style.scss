@@ -6,7 +6,12 @@
 @import "footer";
 @import "modal-form";
 
+/*Slick Dots*/
+#app .slick-dots li button:before{
+  font-family: FontAwesome;
 
+}
+/************/
 /*Personal data block*/
 #app .personal-data{
   display: flex;
@@ -207,6 +212,8 @@
   }
 }
 /**********/
+
+
 
 @keyframes knowNotifAnimation {
   from{opacity: 0; height: 0px;}

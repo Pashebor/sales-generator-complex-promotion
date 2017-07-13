@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {showModal, guaranteesShow} from '../../../actions/index';
+import {showModal} from '../../../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -7,29 +7,11 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 class Recomendations extends Component{
     constructor(props) {
         super(props);
-        this.knowGuaranteesHandler = this.knowGuaranteesHandler.bind(this);
         this.callPopupHandler = this.callPopupHandler.bind(this);
     }
 
-    knowGuaranteesHandler() {
-        this.props.guaranteesShow(true);
+    callPopupHandler() {
         this.props.showModal(true);
-    }
-
-    callPopupHandler(event) {
-
-        this.props.showModal(true);
-        /*switch (event.target.getAttribute('data-audit')) {
-         case 'Поднять позиции в поисковых системах':
-         yaCounter44418460.reachGoal('RAISE_POSITION'); return true;
-         break;
-         case 'Увеличить число новых клиентов':
-         yaCounter44418460.reachGoal('INCREASE'); return true;
-         break;
-         case 'Уменьшить стоимость привлечения клиентов':
-         yaCounter44418460.reachGoal('CUT_COST'); return true;
-         break;
-         }*/
     }
     render() {
         return(
@@ -59,9 +41,9 @@ class Recomendations extends Component{
                                 <p>Продвижение только по целевым запросам, согласованным с Вами</p>
                             </div>
                             <div className="recomendations-info__item">
-                                <img src="images/individual-approach.svg" alt="ИНДИВИДУАЛЬНЫЙ ПОДХОД" title="ИНДИВИДУАЛЬНЫЙ ПОДХОД"  data-audit="ИНДИВИДУАЛЬНЫЙ ПОДХОД" onClick={this.callPopupHandler}/>
-                                <h4>ИНДИВИДУАЛЬНЫЙ ПОДХОД</h4>
-                                <p>Над каждым проектом работает персональный менеджер</p>
+                                <img src="images/wallet.svg" alt="ИНДИВИДУАЛЬНЫЙ ПОДХОД" title="ИНДИВИДУАЛЬНЫЙ ПОДХОД"  data-audit="ИНДИВИДУАЛЬНЫЙ ПОДХОД" onClick={this.callPopupHandler}/>
+                                <h4>ВОЗМОЖНОСТЬ ДЛЯ МАЛОГО БИЗНЕСА</h4>
+                                <p>Мы работаем с проектами <br/> от <strong>35</strong> тыс. рублей</p>
                             </div>
                             <div className="recomendations-info__item">
                                 <img src="images/key-site.svg" alt="РАБОТА НАД САЙТОМ ПОД КЛЮЧ" title="РАБОТА НАД САЙТОМ ПОД КЛЮЧ"  data-audit="РАБОТА НАД САЙТОМ ПОД КЛЮЧ" onClick={this.callPopupHandler}/>
@@ -69,12 +51,6 @@ class Recomendations extends Component{
                                 <p>Вы забываете о сайте <br/> и просто получаете заявки</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="btn-block">
-                        <button className="btn" onClick={this.knowGuaranteesHandler}>Узнайте о наших гарантиях</button>
-                    </div>
-                    <div className="separatorbottom">
-                        <svg version="1.1" id="bottom-triangle" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 0 100 H 100 V 0 H 58.5 L 50 100 L 41.5 0 H 0 Z"></path></svg>
                     </div>
                 </section>
             </ScrollableAnchor>
@@ -89,7 +65,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, guaranteesShow}, dispatch);
+    return bindActionCreators({showModal}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recomendations);

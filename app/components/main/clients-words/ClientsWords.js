@@ -18,9 +18,6 @@ const ClientsWords = () =>{
                             </div>
                         </div>
                     </div>
-                    <div className="separatorbottom">
-                        <svg version="1.1" id="bottom-triangle" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 0 100 H 100 V 0 H 58.5 L 50 100 L 41.5 0 H 0 Z"></path></svg>
-                    </div>
                 </section>
             </ScrollableAnchor>
         );

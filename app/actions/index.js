@@ -11,7 +11,24 @@ export const SCROLLER_OPACITY = 'setStyles';
 export const CONTRACT_FORM = 'contractShow';
 export const WORK_PLAN_FORM = 'workPlanShow';
 export const RECOMENDATION_FORM = 'guaranteesShow';
+export const REPORT_FORM = 'REPORT_EXAMPLE';
+export const SET_WINDOW_POS = 'SET_WINDOW_POS';
 /*ACTIONS*/
+
+
+export const setWindowPos = (value) => {
+    return{
+        type: SET_WINDOW_POS,
+        position: value
+    }
+}
+
+export const reportShow = (value) => {
+    return {
+        type: REPORT_FORM,
+        show: value
+    }
+}
 
 export const guaranteesShow = (value) => {
     return{

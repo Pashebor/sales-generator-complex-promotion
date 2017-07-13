@@ -8,6 +8,7 @@ import Recomendations from './recomendations/Recomendations';
 import ClientsWords from './clients-words/ClientsWords';
 import Facts from './facts/Facts';
 import BringClients from './bring-clients/BringClients';
+import KeyDigits from './key-digits/KeyDigits';
 
 class Main extends Component{
     render() {
@@ -17,6 +18,7 @@ class Main extends Component{
                <WorkStages/>
                <WhatDoYouGet/>
                <Results/>
+               <KeyDigits/>
                <Recomendations/>
                <ClientsWords/>
                <Facts/>

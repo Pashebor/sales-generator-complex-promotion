@@ -22,7 +22,7 @@ class WorkInsurance extends React.Component{
                     <p className="insurance__text">Посмотрите план работ по сайту одного из наших клиентов на 2 месяца!
                        <br/> Мы вышлем его бесплатно Вам на почту.</p>
                     <div className="btn-block">
-                        <button className="btn btn--download" onClick={this.orderWorkPlanHandler}>План работ на 2 месяца <span>PDF, 2.5 мб.</span></button>
+                        <button className="btn btn--download" onClick={this.orderWorkPlanHandler}>План работ на 2 месяца <span>PDF, 2.5 МБ.</span></button>
                     </div>
                   </div>
                 </div>
