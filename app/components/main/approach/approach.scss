@@ -1,0 +1,72 @@
+.approach{
+  @extend .recomendations;
+  &__title{
+    @extend .recomendations__title;
+  }
+
+  &-types{
+
+    background-image: url("../images/lines.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 90%;
+    margin: 40px auto;
+
+    &-wrapper{
+      display: flex;
+      flex-flow: row;
+      width: 90%;
+      margin: auto;
+
+    }
+    &__item{
+      flex: 1;
+      height: 50px;
+      text-align: center;
+      cursor: pointer;
+      &--active{
+        font-weight: bolder;
+        color: yellow;
+      }
+      p{
+        font-family: $headers-font-regular;
+        font-size: 14px;
+      }
+    }
+  }
+  &-slider{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    &__nav{
+      width: 10%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        transform: scale(1.2);
+      }
+      img{
+        width: 34px;
+        height: 34px;
+        display: block;
+        margin: auto;
+      }
+    }
+    &__block{
+      width: 70%;
+
+    }
+    &__item{
+      border: 1px solid green;
+      text-align: center;
+      padding: 20px 30px;
+      height: 100px;
+      p{
+        margin-top: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+}

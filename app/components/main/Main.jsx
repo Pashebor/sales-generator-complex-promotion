@@ -9,12 +9,14 @@ import ClientsWords from './clients-words/ClientsWords';
 import Facts from './facts/Facts';
 import BringClients from './bring-clients/BringClients';
 import KeyDigits from './key-digits/KeyDigits';
+import Approach from './approach/Approach';
 
 class Main extends Component{
     render() {
         return(
            <main className="main">
                <Guarantees/>
+               <Approach/>
                <WorkStages/>
                <WhatDoYouGet/>
                <Results/>

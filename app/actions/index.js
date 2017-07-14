@@ -13,8 +13,15 @@ export const WORK_PLAN_FORM = 'workPlanShow';
 export const RECOMENDATION_FORM = 'guaranteesShow';
 export const REPORT_FORM = 'REPORT_EXAMPLE';
 export const SET_WINDOW_POS = 'SET_WINDOW_POS';
+export const SET_APPROACH_ITEM = 'SET_APPROACH_ITEM';
 /*ACTIONS*/
 
+export const setApproachItem = (item) => {
+    return{
+        type: SET_APPROACH_ITEM,
+        payload: item
+    }
+};
 
 export const setWindowPos = (value) => {
     return{
