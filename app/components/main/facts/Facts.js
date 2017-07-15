@@ -6,28 +6,29 @@ const Facts = () => {
             <ScrollableAnchor id={'facts'}>
                 <section className="facts">
                     <div className="container">
-                        <h2 className="facts__title">НЕСКОЛЬКО ФАКТОВ О НАС:</h2>
+                        <h2 className="facts__title">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ ОТРАСЛЕВЫЕ SEO-ИНСТРУМЕНТЫ:</h2>
                         <div className="facts-info">
                             <div className="facts-info__item">
-                                <img src="images/specialists.svg" alt="Специалисы" title="Специалисы" data-audit="Специалисы"/>
-                                <p>В нашей команде более <strong>67</strong> специалистов</p>
+                                <img src="images/similar-web.jpg" alt="SimilarWeb" title="SimilarWeb"/>
+                                <p>Онлайн сервис,  который позволяет анализировать  Интернет  трафик в разрезе регионов и тематик</p>
                             </div>
                             <div className="facts-info__item">
-                                <img src="images/cliensts-grow.svg" alt="Привлечение клиентов" title="Привлечение клиентов" data-audit="Привлечение клиентов"/>
-                                <p>Мы привлекли на сайты наших клиентов <strong>7 990 502</strong> посетителей</p>
+                                <img src="images/spy-work.jpg" alt="Spy Words" title="Spy Words"/>
+                                <p>Уникальный сервис для анализа поисковых запросов сайтов конкурентов</p>
                             </div>
                             <div className="facts-info__item">
-                                <img src="images/money.svg" alt="Работа спроектами" title="Работа спроектами"  data-audit="Работа спроектами"/>
-                                <p>Мы работаем с проектами от <strong>40</strong> тыс. рублей</p>
+                                <img src="images/keys.jpg" alt="Keys.co.ru" title="Keys.co.ru" />
+                                <p>Сервис для создания семантического ядра путем анализа сайтов прямых конкурентов</p>
                             </div>
                             <div className="facts-info__item">
-                                <img src="images/traffic-grow.svg" alt="Цена проектов" title="Цена проектов"  data-audit="Цена проектов"/>
-                                <p>Рост трафика наших клиентов за прошедший год <strong>724</strong> %</p>
+                                <img src="images/serpstat.jpg" alt="SERPSTAT" title="SERPSTAT"  />
+                                <p>Онлайн сервис для подробного анализа конкурентов, поиска и экспорта ключевых слов</p>
+                            </div>
+                            <div className="facts-info__item">
+                                <img src="images/key-collector.jpg" alt="KEY Collector" title="KEY Collector"  />
+                                <p>Программный комплекс, для оказания качественной помощи в создании семантического ядра сайта</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="separatorbottom">
-                        <svg version="1.1" id="bottom-triangle" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 0 100 H 100 V 0 H 58.5 L 50 100 L 41.5 0 H 0 Z"></path></svg>
                     </div>
                 </section>
             </ScrollableAnchor>

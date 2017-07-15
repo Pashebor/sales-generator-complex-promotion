@@ -6,6 +6,10 @@ $header-text-color: rgb(255, 255, 255);
   &__content{
     padding: 50px 0 0 0;
     text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
+    .btn{
+      display: block;
+      margin: 38px auto 0 auto;
+    }
     &-title{
       font-size: 32px;
       text-transform: uppercase;
@@ -21,6 +25,7 @@ $header-text-color: rgb(255, 255, 255);
       font-size: 28px;
       text-transform: none;
       margin-bottom: 23px;
+      margin-top: 15px;
     }
     &-text{
       text-align: center;
@@ -31,13 +36,13 @@ $header-text-color: rgb(255, 255, 255);
 
 .content{
   &--background{
-    background-image: radial-gradient(rgba(33, 33, 33, 0.89) 0%, rgb(3, 3, 3) 100%);
+    background-color: rgba(20, 20, 20, 0.81);
     padding-bottom: 43px;
   }
 }
 
 .header-content-background{
-  background-image: url("../images/headerbackground.png");
+  background-image: url("../images/headerbackground.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

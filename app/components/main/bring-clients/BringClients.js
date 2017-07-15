@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {sendClientsCallback} from '../../../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
-class BringClients extends Component{
+class BringClients extends React.Component{
 
     btnSubmitHandler(e) {
         e.preventDefault();
         let formData = {'form-name': 'know-bottom'};
 
-        formData.name = this.refs["name"].value;
-        formData.phone = this.refs["phone"].mask.getValue();
+        formData.name = this.refs.name.value;
+        formData.phone = this.refs.phone.mask.getValue();
         this.props.sendClientsCallback(formData);
-        /*yaCounter44418460.reachGoal('KNOW');*/
         return true;
     }
 
@@ -50,7 +49,7 @@ class BringClients extends Component{
                         <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
                             <input className="form-control" placeholder="Имя *" type="text" ref="name" required/>
                             <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
-                            <input type="submit" className="btn submit-btn"  value="Получить индивидуальное предложение!"/>
+                            <input type="submit" className="btn submit-btn"  value="Получить индивидуальное предложение"/>
                         </form>
 
                 <ScrollableAnchor id={'how-many-clients'}>

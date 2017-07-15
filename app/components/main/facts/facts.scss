@@ -1,12 +1,12 @@
 .facts{
-  padding-top: 70px;
+  padding-top: 40px;
   position: relative;
   z-index: 1;
   padding-bottom: 44px;
 
   .separatorbottom{
     #bottom-triangle{
-      fill: #bfbfbf;
+      fill: #E0E0E0;
     }
   }
   .btn{
@@ -18,7 +18,7 @@
     }
   }
   &__title{
-    @extend .guarantees__title;
+    @extend .work-stages__title;
     margin-top: 0;
     font-family: $headers-font-regular;
     font-size: 28px;
@@ -29,12 +29,12 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    margin: 60px 0 68px 0;
+    margin: 30px 0 0 0;
     &__item{
-      width: 30%;
+      width: 19%;
       img{
-        width: 108px;
-        height: 108px;
+        padding: 0 10px;
+        width: 100%;
         display: block;
         margin: auto;
         transition: all 0.3s ease-in-out;
@@ -44,9 +44,10 @@
       }
       p{
         font-size: 15px;
-        text-align: center;
+        text-align: left;
         font-family: $headers-font-regular;
-        margin-top: 15px;
+        margin-top: 5px;
+        padding: 0 10px;
       }
     }
   }

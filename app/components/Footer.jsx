@@ -12,10 +12,11 @@ const Footer = () => {
             </div>
             <div className="container">
               <div className="footer-container">
-                <a href="http://sales-generator.ru"><div className="footer__logo"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></div></a>
+                <div className="footer__logo"><a href="http://sales-generator.ru"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></a></div>
                 <address className="footer__address">
                     <p>info@salesgenerator.pro</p>
                     <p>г. Москва</p>
+                    <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf" className="confidential-link" >Политика конфиденциальности</a>
                 </address>
                     <div className="footer__phone">
                         <p>Звонок по России бесплатный</p>
