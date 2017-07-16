@@ -5,7 +5,9 @@
   &__title{
     @extend .recomendations__title;
   }
-
+  .slick-slide{
+    height: 120px;
+  }
   &-types{
 
     background-image: url("../images/lines.png");
