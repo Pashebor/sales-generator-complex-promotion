@@ -1,7 +1,7 @@
 import {SET_APPROACH_ITEM} from '../actions/index'
 
 const initialState = {
-    approachItem: 1
+    approachItem: 0
 };
 
 const approachReducer = (state = initialState, action) => {

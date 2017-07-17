@@ -14,7 +14,6 @@ class BringClients extends React.Component{
         formData.name = this.refs.name.value;
         formData.phone = this.refs.phone.mask.getValue();
         this.props.sendClientsCallback(formData);
-        /*yaCounter44418460.reachGoal('KNOW');*/
         return true;
     }
 

@@ -2,6 +2,9 @@
   .btn--callback{
     margin-left: 0px;
     width: 50%;
+    flex: 1 50%;
+    position: relative;
+    right: 20px;
   }
   .nav{
     flex-flow: row wrap;
@@ -9,14 +12,17 @@
     &__tel{
       margin: 10px 0 0 0;
       width: 50%;
-      text-align: left;
+      text-align: center;
+      flex: 1 50%;
       padding-left: 5px;
+      &::before{
+        left: 23%;
+      }
     }
     &__title{
       text-align: center;
       width: 50%;
       margin-left: auto;
-      left: 10%;
       display: block;
     }
     &__logo{
@@ -45,6 +51,101 @@
     &-content-background{
       background: url("../images/headerbackground.png") no-repeat 100% 50%;
       background-size: cover;
+    }
+  }
+
+  .wdyg {
+    padding: 40px 0;
+    &-info {
+      flex-flow: row wrap;
+      justify-content: space-around;
+      &__item {
+        width: 45%;
+      }
+    }
+  }
+
+  .key-digits{
+    .digits{
+      &__item{
+        width: 50%;
+      }
+    }
+  }
+
+  .approach{
+    padding-bottom: 15px;
+    .slick-slide{
+      height: 100%;
+    }
+    &-types{
+      background: none;
+      margin-bottom: 10px;
+      &-wrapper{
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+      &__item{
+        width: 30%;
+        @for $item from 1 through 7 {
+          &:nth-child(#{$item}) {
+            position: static;
+          }
+        }
+        img{
+          width: 74px;
+          height: 74px;
+        }
+      }
+    }
+    &-slider{
+      &__nav{
+        display: none;
+      }
+      &__block{
+        width: 100%;
+      }
+      &__item{
+        height: auto;
+      }
+    }
+  }
+
+  .cl-words-info__director{
+    width: 35%;
+  }
+
+  .stages{
+    align-items: flex-start;
+    padding: 0;
+    &-links {
+      flex: 1 50%;
+      &__item{
+        font-size: 16px;
+        strong{
+          font-size: 20px;
+        }
+        &--active{
+          color: rgb(0, 114, 188);
+          font-family: $headers-font-regular;
+          font-weight: 600;
+          animation: link-anim 0.7s 1 linear;
+          p::after{
+            position: relative;
+            top: 5px;
+            left: 20px;
+            font-family: FontAwesome;
+            content: '';
+            font-size: 16px;
+            font-weight: 100;
+            animation: none;
+          }
+        }
+      }
+    }
+    &__description {
+      flex: 1 40%;
+      height: 400px;
     }
   }
 

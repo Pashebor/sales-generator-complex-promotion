@@ -1,5 +1,6 @@
 .key-digits{
   @extend .work-stages;
+  background-color: #efefef;
   &__title{
     @extend .work-stages__title;
   }

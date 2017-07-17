@@ -10,11 +10,18 @@ export const NULL_CALLBACKS = 'nullCallbacks';
 export const SCROLLER_OPACITY = 'setStyles';
 export const CONTRACT_FORM = 'contractShow';
 export const WORK_PLAN_FORM = 'workPlanShow';
-export const RECOMENDATION_FORM = 'guaranteesShow';
-export const REPORT_FORM = 'REPORT_EXAMPLE';
+export const REPORT_FORM = 'REPORT_FORM';
 export const SET_WINDOW_POS = 'SET_WINDOW_POS';
 export const SET_APPROACH_ITEM = 'SET_APPROACH_ITEM';
+export const KNOW_DEFAULT_FORM = 'KNOW_DEFAULT_FORM';
 /*ACTIONS*/
+
+export const showKnowDefaultForm = (isShow) => {
+    return{
+        type: KNOW_DEFAULT_FORM,
+        show: isShow
+    }
+}; 
 
 export const setApproachItem = (item) => {
     return{
@@ -37,12 +44,6 @@ export const reportShow = (value) => {
     }
 }
 
-export const guaranteesShow = (value) => {
-    return{
-        type: RECOMENDATION_FORM,
-        show: value
-    }
-}
 
 export const workPlanShow = (value) => {
     return{

@@ -12,39 +12,34 @@ class Approach extends React.Component{
         this.hoverPaginHandler = this.hoverPaginHandler.bind(this);
 
     }
-
-    componentDidMount() {
-        console.log(this.refs);
-    }
+    
 
     nextHandler() {
-        this.refs.slider.slickNext();
+        this.refs.slider.slickGoTo(this.props.approachesState + 1);
+        this.props.setApproachItem(this.props.approachesState + 1);
+        this.props.approachesState === 6 ? this.props.setApproachItem(0) : null;
     }
 
     peviousHandler() {
-        this.refs.slider.slickPrev();
+        this.refs.slider.slickGoTo(this.props.approachesState - 1);
+        this.props.setApproachItem(this.props.approachesState - 1);
+        this.props.approachesState === 0 ? this.props.setApproachItem(6) : null;
     }
 
     hoverPaginHandler(event) {
         this.props.setApproachItem(parseInt(event.target.getAttribute('value')));
-        this.refs.slider.slickGoTo(parseInt(event.target.getAttribute('value')) - 1);
-    }
-
-    itemsClassActive() {
-        console.log(this);
-        /* if (this.props.approachesState === event.target.getAttribute('value')) {
-         return 'approach-types__item approach-types__item--active"';
-         } else {
-         return 'approach-types__item';
-         }*/
+        this.refs.slider.slickGoTo(parseInt(event.target.getAttribute('value')));
     }
 
     approachItems() {
-        const items = [1, 2, 3, 4, 5, 6, 7],
-            text = ['Окупаемость вложений', 'Конкретный результат', '50% клиентов получают отказ', 'Масштабирование вашего бизнеса', 'Сущность потребностей ЦА', 'Уникальная методика', 'Погружение в бизнес клиента'];
-
-        return items.map(item => {
-            return (<div key={item} className={`approach-types__item ${this.props.approachesState === item ? ' approach-types__item--active': null}`} value={item} ref={`paginator${item}`} onMouseEnter={this.hoverPaginHandler}>{item}</div>);
+        const items = [0, 1, 2, 3, 4, 5, 6],
+            text = ['Окупаемость вложений', 'Конкретный результат', '50% клиентов получают отказ', 'Масштабирование вашего бизнеса', 'Сущность потребностей ЦА', 'Уникальная методика', 'Погружение в бизнес клиента'],
+            images = ['bag', 'aim', 'phone', 'planet', 'quest', 'wood', 'search'];
+        return items.map((item, i) => {
+            return (<div key={item} className={`approach-types__item ${this.props.approachesState === item ? ' approach-types__item--active': ''}`}  ref={`paginator${item}`} >
+                <img value={item} onMouseEnter={this.hoverPaginHandler} src={`images/${images[i]}${this.props.approachesState === item ? '-green' : "-blue"}.svg`} alt="" title="" />
+                <p value={item} onMouseEnter={this.hoverPaginHandler}>{text[i]}</p>
+            </div>);
         })
     }
 
@@ -58,15 +53,23 @@ class Approach extends React.Component{
             slidesToShow: 1,
             slidesToScroll: 1,
             lazyLoad: false,
-            draggable: true,
+            draggable: false,
+            swipeToSlide: false,
             pauseOnHover: false,
             arrows: false,
             fade: true,
+            touchMove: false,
+            swipe: false,
+            swipeToSlide: false,
             responsive: [{
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
-                    infinite: true
+                    slidesToShow: 1,
+                    draggable: false,
+                    swipeToSlide: false,
+                    infinite: true,
+                    touchMove: false,
+                    swipe: false
                 }
             }, {
 
@@ -74,7 +77,11 @@ class Approach extends React.Component{
                 settings: {
                     slidesToShow: 1,
                     dots: false,
-                    arrows: false
+                    draggable: false,
+                    swipeToSlide: false,
+                    arrows: false,
+                    touchMove: false,
+                    swipe: false
                 }
             }]
         };

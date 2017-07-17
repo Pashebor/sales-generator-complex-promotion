@@ -10,6 +10,7 @@ import SemanticCore from './stages/SemanticCore';
 import ExpertContent from './stages/ExpertContent';
 import Conversion from './stages/Conversion';
 import WorkInsurance from './WorkInsurance';
+import routeCodes from '../../../utils/route.path';
 
 class WorkStages extends React.Component{
     constructor(props) {
@@ -31,11 +32,11 @@ class WorkStages extends React.Component{
                 <h2 className="work-stages__title">Этапы работ:</h2>
                  <BrowserRouter>
                    <Switch>
-                     <Route exact path={'/'} component={PreparePromotion}/>
-                     <Route path={'/optimization'} component={InnerOuterOptimization}/>
-                     <Route path={'/semantic-core'} component={SemanticCore}/>
-                     <Route path={'/expert-content'} component={ExpertContent}/>
-                     <Route path={'/conversion'} component={Conversion}/>
+                     <Route exact path={routeCodes.HOME} component={PreparePromotion}/>
+                     <Route path={routeCodes.OPTIMIZATION} component={InnerOuterOptimization}/>
+                     <Route path={routeCodes.SEMANTIC_CORE} component={SemanticCore}/>
+                     <Route path={routeCodes.EXPERT_CONTENT} component={ExpertContent}/>
+                     <Route path={routeCodes.CONVERSION} component={Conversion}/>
                    </Switch>
                  </BrowserRouter>
                  <WorkInsurance/>

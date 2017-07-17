@@ -1,4 +1,17 @@
-import {SET_WINDOW_POS, GET_MODAL_FORM, OPEN_FULL_CASE, OPEN_SLIDER, SEND_MESSAGE_SUCCESS, SEND_CLIENTS_SUCCESS, NULL_CALLBACKS, SCROLLER_OPACITY, CONTRACT_FORM, WORK_PLAN_FORM, RECOMENDATION_FORM, REPORT_FORM} from '../actions/index';
+import {
+    SET_WINDOW_POS,
+    GET_MODAL_FORM,
+    OPEN_FULL_CASE,
+    OPEN_SLIDER,
+    SEND_MESSAGE_SUCCESS,
+    SEND_CLIENTS_SUCCESS,
+    NULL_CALLBACKS,
+    SCROLLER_OPACITY,
+    CONTRACT_FORM,
+    WORK_PLAN_FORM,
+    REPORT_FORM,
+    KNOW_DEFAULT_FORM
+} from '../actions/index';
 
 const initialState = {
     modalShow: false,
@@ -13,21 +26,21 @@ const initialState = {
     auditType: '',
     contract: false,
     workPlan: false,
-    guarantees: false,
+    knowDefault: false,
     report: false,
     windowPosition: null
 };
 
 const salesReducer =  ( state = initialState, action) => {
     switch (action.type) {
+        case KNOW_DEFAULT_FORM:
+            return Object.assign({}, state, {knowDefault: action.show});
+            break;
         case SET_WINDOW_POS:
             return Object.assign({}, state, {windowPosition: action.position});
             break;
         case REPORT_FORM:
             return Object.assign({}, state, {report: action.show});
-            break;
-        case RECOMENDATION_FORM:
-            return Object.assign({}, state, {guarantees: action.show});
             break;
         case WORK_PLAN_FORM:
             return Object.assign({}, state, {workPlan: action.show});

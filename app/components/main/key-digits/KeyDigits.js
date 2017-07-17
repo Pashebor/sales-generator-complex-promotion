@@ -17,10 +17,11 @@ class KeyDigits extends React.Component{
                 this.flag += 1;
 
                 if (this.flag === 1) {
-                    animateValue('traffic', 0, 5000, quadratic);
-                    animateValue('leaving', 0, 5000, quadratic);
-                    animateValue('requests', 21000, 0, linear);
-                    animateValue('deep-view', 0, 5000, linear);
+                    animateValue('traffic', 0, 3000, linear);
+                    animateValue('leaving', 0, 3000, linear);
+                    animateValue('requests', 0, 3000, linear);
+                    animateValue('requests2', 0, 3000, linear);
+                    animateValue('deep-view', 0, 3000, linear);
                 }
             }
         });
@@ -31,16 +32,16 @@ class KeyDigits extends React.Component{
                 <h2 className="key-digits__title">КЛЮЧЕВЫЕ ЦИФРЫ НАШИХ КЛИЕНТОВ:</h2>
                 <div className="digits" ref={'digits'}>
                     <div className="digits__item">
-                        <h3 className="digits__title"><span id="traffic">420</span>х</h3>
-                        <p className="digits__text">Увеличение трафика <br/> на сайтах клиентов</p>
-                    </div>
-                    <div className="digits__item">
                         <h3 className="digits__title"><span id="leaving">116</span>%</h3>
                         <p className="digits__text">Увеличение <br/> продолжительности посещения</p>
                     </div>
                     <div className="digits__item">
-                        <h3 className="digits__title"><span id="requests">21600</span></h3>
+                        <h3 className="digits__title"><span id="requests">21</span> <span id="requests2">600</span></h3>
                         <p className="digits__text">Запросов наших клиентов в <br/> ТОП 10</p>
+                    </div>
+                    <div className="digits__item">
+                        <h3 className="digits__title"><span id="traffic">763</span>%</h3>
+                        <p className="digits__text">Увеличение трафика <br/> на сайтах клиентов</p>
                     </div>
                     <div className="digits__item">
                         <h3 className="digits__title"><span id="deep-view">26</span>%</h3>

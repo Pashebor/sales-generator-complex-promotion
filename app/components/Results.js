@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {openCase, sendClientsCallback} from '../actions/index';
+import {openCase, showKnowDefaultForm, showModal} from '../actions/index';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux';
 import MaskedInput from 'react-maskedinput';
@@ -7,6 +7,17 @@ import Slider from 'react-slick';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Result extends Component{
+
+    constructor(props) {
+        super(props);
+        this.openKnowFormHandler = this.openKnowFormHandler.bind(this);
+    }
+
+    openKnowFormHandler() {
+        this.props.showKnowDefaultForm(true);
+        this.props.showModal(true);
+    }
+
     caseClickHandler(event){
         let array = [];
 
@@ -29,34 +40,6 @@ class Result extends Component{
         this.props.openCase(array, true);
     }
 
-    btnSubmitHandler(e) {
-        e.preventDefault();
-        let formData = {'form-name': 'results'};
-        formData.phone = this.refs.phone.mask.getValue();
-        this.props.sendClientsCallback(formData);
-        /*yaCounter44418460.reachGoal('KNOW');*/
-        return true;
-    }
-
-    clientsNotification() {
-        let response = this.props.formState.clientsResp;
-        let notification = (resp) => {
-            switch (resp.response) {
-                case true:
-                    return <h5 className="know-form__notification">Ваша заявка принята, с Вами свяжется наш менеджер</h5>;
-                    break;
-                case false:
-                    return <h5 className="know-form__notification know-form__notification--error">Произошла ошибка отправки письма</h5>;
-                    break;
-            }
-        };
-
-        if (response) {
-            return notification(response);
-        } else {
-            return false;
-        }
-    }
 
     render() {
         const settings = {
@@ -73,7 +56,7 @@ class Result extends Component{
             responsive: [{
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     infinite: true
                 }
             }, {
@@ -152,7 +135,7 @@ class Result extends Component{
                         </div>
                     </Slider>
                 </ScrollableAnchor>
-                    <button className="btn">Узнать, сколько клиентов мы можем привести Вам на сайт</button>
+                    <button className="btn" onClick={this.openKnowFormHandler}>Узнать, сколько клиентов мы можем привести Вам на сайт</button>
                 </div>
         </section>
     );
@@ -166,7 +149,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({openCase, sendClientsCallback}, dispatch);
+    return bindActionCreators({openCase, showKnowDefaultForm, showModal}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Result);

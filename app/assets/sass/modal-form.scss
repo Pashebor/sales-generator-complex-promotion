@@ -11,7 +11,7 @@
 
   .popup-form{
     margin: auto;
-    top: 30%;
+    top: 20%;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -51,7 +51,7 @@
     }
     p{
       font-family: $headers-font-regular;
-      font-size: 22px;
+      font-size: 20px;
       text-align: center;
     }
     span{
@@ -63,6 +63,10 @@
       height: 44px;
       border-radius: 5px;
       line-height: 20px;
+    }
+    textarea{
+      border-width: 2px;
+      height: 90px;
     }
     input[type="submit"] {
       display: block;
