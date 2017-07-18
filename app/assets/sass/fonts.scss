@@ -53,6 +53,10 @@ $secondary-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $seo-font: RobotoSlabRegular;
 $seo-font-bold: RobotoSlabBold;
 
+@mixin default-shadow () {
+  text-shadow: rgba(0,0,0,.5) 1px 0 0;
+}
+
 
 body{
   font-family: $primary-font;

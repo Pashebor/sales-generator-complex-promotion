@@ -73,7 +73,7 @@ class Result extends Component{
 
         <section className="results">
                 <div className="container">
-                    <h2 className="results__title">РЕЗУЛЬТАТЫ НАШЕЙ РАБОТЫ:</h2>
+                    <h2 className="results__title">РЕЗУЛЬТАТЫ НАШЕЙ РАБОТЫ</h2>
                     <p className="results__subtitle">МЫ ЗНАЕМ, КАК СДЕЛАТЬ ИЗ МАЛОГО БИЗНЕСА КРУПНЫЙ</p>
                     <ScrollableAnchor id={'results'}>
                     <Slider {...settings}>
@@ -135,7 +135,7 @@ class Result extends Component{
                         </div>
                     </Slider>
                 </ScrollableAnchor>
-                    <button className="btn" onClick={this.openKnowFormHandler}>Узнать, сколько клиентов мы можем привести Вам на сайт</button>
+                    <button className="btn" onClick={this.openKnowFormHandler}>Узнать, сколько клиентов я получу</button>
                 </div>
         </section>
     );

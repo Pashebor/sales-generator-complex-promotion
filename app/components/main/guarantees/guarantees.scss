@@ -15,9 +15,10 @@
       text-align: center;
       margin-bottom: 44px;
       span{
-        /*display: block;*/
+        display: block;
         margin: auto;
         font-family: $primary-font;
+        font-size: 14px;
       }
     }
   }
@@ -27,9 +28,12 @@
     text-align: center;
     text-transform: uppercase;
     color: rgb(51, 51, 51);
+    font-weight: 600;
     border-radius: 8px;
     padding: 10px;
     border: 2px solid rgb(96, 181, 126);
+    @include default-shadow;
+
   }
   &-info{
     display: flex;
@@ -54,7 +58,7 @@
 
       @each $tv in (h4, p) {
         #{$tv}{
-          font-size: 17px;
+          font-size: 16px;
           text-align: center;
           font-family: $headers-font-regular;
         }
@@ -62,7 +66,7 @@
           #{$tv}{
             font-family: $headers-font-regular;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 17px;
             margin-top: 15px;
           }
         }

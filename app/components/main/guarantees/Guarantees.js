@@ -35,7 +35,7 @@ class Guarantees extends React.Component{
             <ScrollableAnchor id={'guarantees'}>
             <section className="guarantees">
                 <div className="container">
-                    <h2 className="guarantees__title">МЫ ДАЕМ ГАРАНТИИ, КОТОРЫЕ НЕ МОГУТ СЕБЕ ПОЗВОЛИТЬ 95% КОМПАНИЙ:</h2>
+                    <h2 className="guarantees__title">МЫ ДАЕМ ГАРАНТИИ, КОТОРЫЕ НЕ МОГУТ СЕБЕ ПОЗВОЛИТЬ 95% КОМПАНИЙ</h2>
                     <div className="guarantees-info">
                         <div className="guarantees-info__item">
                             <img src="images/balance.svg" alt="ЮРИДИЧЕСКИЕ ГАРАНТИИ" title="ЮРИДИЧЕСКИЕ ГАРАНТИИ"  onClick={this.callPopupHandler}/>

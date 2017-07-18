@@ -29,7 +29,7 @@ class KeyDigits extends React.Component{
 
         <section className="key-digits">
             <div className="container">
-                <h2 className="key-digits__title">КЛЮЧЕВЫЕ ЦИФРЫ НАШИХ КЛИЕНТОВ:</h2>
+                <h2 className="key-digits__title">КЛЮЧЕВЫЕ ЦИФРЫ НАШИХ КЛИЕНТОВ</h2>
                 <div className="digits" ref={'digits'}>
                     <div className="digits__item">
                         <h3 className="digits__title"><span id="leaving">116</span>%</h3>

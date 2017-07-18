@@ -26,7 +26,7 @@ class WhatDoYouGet extends Component{
             <ScrollableAnchor id={'what-do-you-get'}>
                 <section className="wdyg">
                     <div className="container">
-                        <h2 className="wdyg__title">ЧТО ВЫ ПОЛУЧИТЕ В РЕЗУЛЬТАТЕ:</h2>
+                        <h2 className="wdyg__title">ЧТО ВЫ ПОЛУЧИТЕ В РЕЗУЛЬТАТЕ</h2>
                         <div className="wdyg-info">
                             <div className="wdyg-info__item">
                                 <img src="images/growing.svg" alt="РОСТ ОРГАНИЧЕСКОГО ТРАФИКА" title="РОСТ ОРГАНИЧЕСКОГО ТРАФИКА" data-audit="РОСТ ОРГАНИЧЕСКОГО ТРАФИКА" onClick={this.callPopupHandler}/>

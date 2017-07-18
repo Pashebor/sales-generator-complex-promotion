@@ -8,7 +8,7 @@ class Approach extends React.Component{
     constructor(props) {
         super(props);
         this.nextHandler = this.nextHandler.bind(this);
-        this.peviousHandler = this.peviousHandler.bind(this);
+        this.previousHandler = this.previousHandler.bind(this);
         this.hoverPaginHandler = this.hoverPaginHandler.bind(this);
 
     }
@@ -20,7 +20,7 @@ class Approach extends React.Component{
         this.props.approachesState === 6 ? this.props.setApproachItem(0) : null;
     }
 
-    peviousHandler() {
+    previousHandler() {
         this.refs.slider.slickGoTo(this.props.approachesState - 1);
         this.props.setApproachItem(this.props.approachesState - 1);
         this.props.approachesState === 0 ? this.props.setApproachItem(6) : null;
@@ -90,14 +90,14 @@ class Approach extends React.Component{
         return(
             <section className="approach">
                 <div className="container">
-                    <h2 className="approach__title">СУТЬ НАШЕГО ПОДХОДА:</h2>
+                    <h2 className="approach__title">СУТЬ НАШЕГО ПОДХОДА</h2>
                     <div className="approach-types">
                       <div className="approach-types-wrapper">
                           {this.approachItems()}
                       </div>
                     </div>
                     <div className="approach-slider">
-                        <div className="approach-slider__nav" onClick={this.peviousHandler}><img src="images/arrow-prev.svg"/></div>
+                        <div className="approach-slider__nav" onClick={this.previousHandler}><img src="images/arrow-prev.svg"/></div>
                         <div className="approach-slider__block">
                     <Slider ref='slider' {...settings}>
                         <div className="approach-slider__item">

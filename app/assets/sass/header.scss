@@ -8,7 +8,7 @@ $header-text-color: rgb(255, 255, 255);
     text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
     .btn{
       display: block;
-      margin: 38px auto 0 auto;
+      margin: 55px auto 0 auto;
     }
     &-title{
       font-size: 32px;
@@ -36,7 +36,8 @@ $header-text-color: rgb(255, 255, 255);
 
 .content{
   &--background{
-    background-color: rgba(20, 20, 20, 0.81);
+    background: radial-gradient(circle, rgba(20, 20, 20, 0) 20%, rgba(20, 20, 20, 0.81) 85%);
+    background-position: 20px -140px;
     padding-bottom: 43px;
   }
 }

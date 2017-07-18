@@ -29,7 +29,7 @@ class WorkStages extends React.Component{
             <ScrollableAnchor id={'work-stages'}>
             <section className="work-stages">
              <div className="container">
-                <h2 className="work-stages__title">Этапы работ:</h2>
+                <h2 className="work-stages__title">Этапы работ</h2>
                  <BrowserRouter>
                    <Switch>
                      <Route exact path={routeCodes.HOME} component={PreparePromotion}/>

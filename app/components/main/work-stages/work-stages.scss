@@ -12,6 +12,8 @@
     text-transform: uppercase;
     color: rgb(51, 51, 51);
     margin-top: 0;
+    font-weight: 600;
+    @include default-shadow;
   }
   .arrow-down{
     display: block;

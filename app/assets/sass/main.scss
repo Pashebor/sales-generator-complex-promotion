@@ -65,9 +65,10 @@
     margin-bottom: 20px;
   }
   &__subtitle{
-    font-family: $primary-font;
-    font-size: 20px;
+    font-family: $headers-font-regular;
+    font-size: 17px;
     text-align: center;
+    font-weight: 100;
     span{
       color: rgb(0, 118, 164);
       font-family: $headers-font-regular;
@@ -124,7 +125,7 @@
 @media screen and (min-width: 1501px){
   .header{
     &__content{
-      padding: 200px 0 200px 0;
+      padding: 200px 0 183px 0;
       &-text:first-of-type{
         margin-top: 40px;
       }
@@ -139,7 +140,7 @@
 @media screen and (min-width: 1200px) and (max-width: 1500px){
   .header{
     &__content{
-      padding: 200px 0 200px 0;
+      padding: 200px 0 183px 0;
     }
   }
   .header-content-background{
