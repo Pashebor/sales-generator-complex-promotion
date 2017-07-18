@@ -33,12 +33,12 @@
 /********************/
 
 #app .confidential-link {
-  color: #60b57e;
+  color: white;
   text-decoration: none;
   transition: color 0.2s ease-in;
   font-weight: 600;
   &:hover{
-    color: white;
+    color: #60b57e;
   }
 }
 

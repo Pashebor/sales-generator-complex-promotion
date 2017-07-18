@@ -42,19 +42,22 @@ class BringClients extends React.Component{
             <section className="b-clients">
                     <div className="container">
                         <h2 className="b-clients__title">УЗНАЙТЕ, СКОЛЬКО КЛИЕНТОВ МОЖЕТ ПРИНОСИТЬ ВАШ САЙТ:</h2>
-                        <p className="b-clients__text">Нет двух одинаковых сайтов, поэтому для каждого сайта мы делаем индивидуальный расчет!</p>
-                        <p className="b-clients__text">Получите индивидуальное предложение, <strong>оставив заявку</strong> или позвонив по телефону: <a href="tel:8 800 333 12 93"><strong>8 800 333 12 93</strong></a></p>
                         {this.clientsNotification()}
-
-                        <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
-                            <input className="form-control" placeholder="Имя *" type="text" ref="name" required/>
-                            <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
-                            <input type="submit" className="btn submit-btn"  value="Получить индивидуальное предложение"/>
-                        </form>
-
-                <ScrollableAnchor id={'how-many-clients'}>
-                        <p className="b-clients__text">Это бесплатно и ни к чему Вас не обязывает</p>
-                </ScrollableAnchor>
+                        <div className="b-clients__block">
+                            <div className="b-clients__text">
+                                <p>Нет двух одинаковых сайтов, поэтому для каждого сайта мы делаем индивидуальный расчет!
+                                    Получите индивидуальное предложение, <strong>оставив заявку</strong> или позвонив по телефону: <a href="tel:8 800 333 12 93"><strong>8 800 333 12 93</strong></a>
+                                </p>
+                                <p>Это бесплатно и ни к чему Вас не обязывает</p>
+                            </div>
+                            <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
+                                <input className="form-control" placeholder="Имя *" type="text" ref="name" required/>
+                                <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
+                                <ScrollableAnchor id={'how-many-clients'}>
+                                    <input type="submit" className="btn submit-btn"  value="Получить персональное предложение"/>
+                                </ScrollableAnchor>
+                            </form>
+                        </div>
                     </div>
             </section>
         );

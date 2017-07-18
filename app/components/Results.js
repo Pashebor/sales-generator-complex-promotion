@@ -43,7 +43,7 @@ class Result extends Component{
 
     render() {
         const settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
             autoplaySpeed: 5000,

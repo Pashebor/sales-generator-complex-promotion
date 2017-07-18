@@ -6,7 +6,7 @@ const ClientsWords = () =>{
             <ScrollableAnchor id={'clients-words'}>
                 <section className="cl-words">
                     <div className="container">
-                        <h2 className="cl-words__title">ЧТО ГОВОРЯТ О НАС НАШИ КЛИЕНТЫ:</h2>
+                        <h2 className="cl-words__title">ЧТО ГОВОРЯТ О НАС НАШИ КЛИЕНТЫ</h2>
                         <div className="cl-words-info">
                             <figure className="cl-words-info__director">
                                 <img src="images/ab.png" alt="Алексей бояркин" title="Алексей бояркин"/>

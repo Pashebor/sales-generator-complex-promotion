@@ -18,7 +18,7 @@ class Recomendations extends Component{
             <ScrollableAnchor id={'recomendations'}>
                 <section className="recomendations">
                     <div className="container">
-                        <h2 className="recomendations__title">ПОЧЕМУ 87% КЛИЕНТОВ ПРИХОДЯТ К НАМ ПО РЕКОМЕНДАЦИИ:</h2>
+                        <h2 className="recomendations__title">ПОЧЕМУ 87% КЛИЕНТОВ ПРИХОДЯТ К НАМ ПО РЕКОМЕНДАЦИИ</h2>
                         <div className="recomendations-info">
                             <div className="recomendations-info__item">
                                 <img src="images/cash-back.svg" alt="ВОЗВРАТ ИНВЕСТИЦИЙ" title="ВОЗВРАТ ИНВЕСТИЦИЙ" data-audit="ВОЗВРАТ ИНВЕСТИЦИЙ" onClick={this.callPopupHandler}/>
