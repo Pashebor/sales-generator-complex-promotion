@@ -200,18 +200,13 @@
           font-size: 20px;
         }
         &--active{
-          color: rgb(0, 114, 188);
-          font-family: $headers-font-regular;
-          animation: link-anim 0.7s 1 linear;
+          background-color: #EBEBEB;
+          border-right: none;
           p::after{
-            position: relative;
-            top: 5px;
-            left: 20px;
-            font-family: FontAwesome;
-            content: '';
-            font-size: 16px;
-            font-weight: 100;
-            animation: none;
+            display: none;
+          }
+          &::after{
+            display: none;
           }
         }
     }
@@ -219,6 +214,10 @@
     &__description {
       flex: 1 100%;
       height: auto;
+      &-wrapper{
+        margin-top: 15px;
+        width: 100%;
+      }
     }
   }
 
@@ -242,6 +241,8 @@
     &__title{
       margin-top: 0;
     }
+    &-info{
+      margin: 0;
     &__column{
       &__item{
         img{
@@ -251,6 +252,7 @@
           }
         }
       }
+    }
     }
     &__subtitle{
       font-size: 15px;

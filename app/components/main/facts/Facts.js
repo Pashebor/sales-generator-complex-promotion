@@ -6,7 +6,7 @@ const Facts = () => {
             <ScrollableAnchor id={'facts'}>
                 <section className="facts">
                     <div className="container">
-                        <h2 className="facts__title">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ ОТРАСЛЕВЫЕ SEO-ИНСТРУМЕНТЫ</h2>
+                        <h2 className="facts__title">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ <br/> ОТРАСЛЕВЫЕ SEO-ИНСТРУМЕНТЫ</h2>
                         <div className="facts-info">
                             <div className="facts-info__item">
                                 <img src="images/similar-web.jpg" alt="SimilarWeb" title="SimilarWeb"/>

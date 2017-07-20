@@ -10,6 +10,9 @@
     margin-top: 39px;
     &__item{
       @extend .guarantees-info__item;
+      h4{
+        width: 106%;
+      }
       width: 23%;
       img{
         width: 108px;

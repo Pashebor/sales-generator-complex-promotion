@@ -151,7 +151,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 65%;
+    flex: 1 70%;
     height: 390px;
     animation: fade-in 0.8s 1 linear;
     &-wrapper{
@@ -164,7 +164,7 @@
     }
     ul{
       font-family: $headers-font-regular;
-      font-size: 16px;
+      font-size: 17px;
       margin: auto;
       li{
         margin-bottom: 5px;
