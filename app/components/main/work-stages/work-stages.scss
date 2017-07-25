@@ -91,6 +91,13 @@
       padding: 25px 10px 20px 10px;
       transition: all 0.3s ease-in-out;
       display: block;
+      @each $item in (2, 5) {
+        &:nth-child(#{$item}) {
+          p{
+            top: -10px;
+          }
+        }
+      }
       p{
         position: relative;
         padding: 0 0 0 30px;
@@ -119,6 +126,15 @@
       &--active{
         background-color: #EBEBEB;
         border-right: none;
+        @each $item in (2, 5) {
+          &:nth-child(#{$item}) {
+            p{
+              &::after{
+                top: -18px;
+              }
+            }
+          }
+        }
         p{
           &::after{
             position: absolute;

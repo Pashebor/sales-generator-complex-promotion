@@ -18,8 +18,8 @@ class WhatDoYouGet extends Component{
     orderReportHandler() {
         this.props.showModal(true);
         this.props.reportShow(true);
+        yaCounter44418460.reachGoal('PRIMER_OTCHETA');
     }
-
 
     render() {
         return(

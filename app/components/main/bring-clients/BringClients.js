@@ -14,7 +14,7 @@ class BringClients extends React.Component{
         formData.name = this.refs.name.value;
         formData.phone = this.refs.phone.mask.getValue();
         this.props.sendClientsCallback(formData);
-        return true;
+        yaCounter44418460.reachGoal('POLUCHIT_PREDLOJENIE');
     }
 
     clientsNotification() {

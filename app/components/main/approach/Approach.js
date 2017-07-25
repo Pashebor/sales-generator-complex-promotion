@@ -33,7 +33,7 @@ class Approach extends React.Component{
 
     approachItems() {
         const items = [0, 1, 2, 3, 4, 5, 6],
-            text = ['Окупаемость вложений', 'Конкретный результат', '50% клиентов получают отказ', 'Масштабирование вашего бизнеса', 'Сущность потребностей ЦА', 'Уникальная методика', 'Погружение в бизнес клиента'],
+            text = ['Окупаемость вложений', 'Конкретный результат', 'Мы берем не всех', 'Масштабирование вашего бизнеса', 'Сущность потребностей ЦА', 'Уникальная методика', 'Погружение в бизнес клиента'],
             images = ['bag', 'aim', 'phone', 'planet', 'quest', 'wood', 'search'];
         return items.map((item, i) => {
             return (<div key={item} className={`approach-types__item ${this.props.approachesState === item ? ' approach-types__item--active': ''}`}  ref={`paginator${item}`} >
@@ -90,7 +90,7 @@ class Approach extends React.Component{
         return(
             <section className="approach">
                 <div className="container">
-                    <h2 className="approach__title">СУТЬ НАШЕГО ПОДХОДА</h2>
+                    <h2 className="approach__title">Ключевые принципы нашего подхода</h2>
                     <div className="approach-types">
                       <div className="approach-types-wrapper">
                           {this.approachItems()}
@@ -107,7 +107,7 @@ class Approach extends React.Component{
                             <p><strong>Конкретный результат</strong> мы прописываем в договоре и несём за это финансовую ответственность. Проще говоря, мы вернём Вам все деньги, если результат не будет достигнут.</p>
                         </div>
                         <div className="approach-slider__item">
-                            <p><strong>50% клиентов получают отказ</strong>, потому что у нас нет 95%-ой уверенности в том, что вложения этих клиентов отобьются. Да, это больно по нам бьёт, но так - правильно.</p>
+                            <p><strong>50% наших потенциальных клиентов получают отказ</strong>, потому что у нас нет 95%-ой уверенности в том, что вложения этих клиентов отобьются. Да, это больно по нам бьёт, но так - правильно.</p>
                         </div>
                         <div className="approach-slider__item">
                             <p><strong>Масштабирование Вашего бизнеса,</strong> а не трафик или лиды - цель нашей деятельности.</p>

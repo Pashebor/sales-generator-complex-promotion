@@ -14,21 +14,11 @@ class Guarantees extends React.Component{
     orderAnContractHandler() {
         this.props.contractShow(true);
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('SKACHAT_PRIMER');
     }
 
-    callPopupHandler(event) {
+    callPopupHandler() {
         this.props.showModal(true);
-        /*switch (event.target.getAttribute('data-audit')) {
-            case 'Поднять позиции в поисковых системах':
-                yaCounter44418460.reachGoal('RAISE_POSITION'); return true;
-                break;
-            case 'Увеличить число новых клиентов':
-                yaCounter44418460.reachGoal('INCREASE'); return true;
-                break;
-            case 'Уменьшить стоимость привлечения клиентов':
-                yaCounter44418460.reachGoal('CUT_COST'); return true;
-                break;
-        }*/
     }
     render() {
         return(

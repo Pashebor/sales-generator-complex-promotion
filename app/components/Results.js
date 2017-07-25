@@ -16,6 +16,7 @@ class Result extends Component{
     openKnowFormHandler() {
         this.props.showKnowDefaultForm(true);
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('SKOLKO_KLIENTOV2');
     }
 
     caseClickHandler(event){
@@ -77,6 +78,34 @@ class Result extends Component{
                     <p className="results__subtitle">МЫ ЗНАЕМ, КАК СДЕЛАТЬ ИЗ МАЛОГО БИЗНЕСА КРУПНЫЙ</p>
                     <ScrollableAnchor id={'results'}>
                     <Slider {...settings}>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image6" src="images/bussines-resuourse.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image4" src="images/dejure.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image8" src="images/veronica.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image5" src="images/santech.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
                     <div>
                     <div className="results-info__row">
                         <div className="results-info__column">
@@ -84,6 +113,13 @@ class Result extends Component{
                         </div>
                     </div>
                     </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image7" src="images/word-deal.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
                     <div>
                         <div className="results-info__row">
                             <div className="results-info__column">
@@ -98,41 +134,6 @@ class Result extends Component{
                         </div>
                       </div>
                     </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image4" src="images/dejure.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image5" src="images/santech.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image6" src="images/bussines-resuourse.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image7" src="images/word-deal.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image8" src="images/veronica.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
                     </Slider>
                 </ScrollableAnchor>
                     <button className="btn" onClick={this.openKnowFormHandler}>Узнать, сколько клиентов я получу</button>

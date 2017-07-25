@@ -1,4 +1,4 @@
-const publicPath = '/complex-promotion/';/*complex-promotion/*/
+const publicPath = '/complex-promotion/';
 
 const routeCodes = {
     HOME: publicPath,

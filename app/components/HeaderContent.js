@@ -12,6 +12,7 @@ class HeaderContent extends Component{
     openKnowFormHandler() {
         this.props.showKnowDefaultForm(true);
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('SKOLKO_KLIENTOV');
     }
 
     render() {

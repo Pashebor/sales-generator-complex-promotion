@@ -43,11 +43,16 @@
         }
       }
       p{
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
         font-family: $headers-font-regular;
         margin-top: 15px;
         padding: 0 10px;
+      }
+      &:last-child{
+        p{
+          width: 104%;
+        }
       }
     }
   }

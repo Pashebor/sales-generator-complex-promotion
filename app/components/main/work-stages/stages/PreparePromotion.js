@@ -23,6 +23,9 @@ class PreparePromotion extends Component{
                         <li>Создание и/или настройка файла robots.txt</li>
                         <li>Составление карты метатегов (title, h1, description, h2-h6, keywords, alt)</li>
                         <li>Настройка ЧПУ ссылок (url)</li>
+                        <li>Реализация на сайте микроразметки schema.org</li>
+                        <li>Создание и/или настройка файла .htaccess</li>
+                        <li>Устранение ошибок вебмастера</li>
                     </ul>
                    </div>
                 </div>

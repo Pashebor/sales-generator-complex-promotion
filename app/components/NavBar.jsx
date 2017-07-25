@@ -8,8 +8,7 @@ import {connect} from 'react-redux';
 class NavBar extends Component{
     openModalHandler() {
         this.props.showModal(true);
-        yaCounter44418460.reachGoal('CALL_BACK');
-        return true;
+        yaCounter44418460.reachGoal('ZAKAZAT_ZVONOK');
     }
 
     render() {

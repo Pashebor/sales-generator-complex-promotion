@@ -8,7 +8,7 @@ class ModalForm extends Component{
     personalAgreement() {
         return (
             <div className="personal-data">
-                <input type="checkbox" className="form-control" required/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
+                <input type="checkbox" className="form-control" required defaultChecked/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
             </div>
         );
     }
@@ -113,7 +113,7 @@ class ModalForm extends Component{
             return(
                 <div className="popup-form">
                     <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                    <p>Оставьте Ваши контакты и мы отправим Вам пример договора на электронную почту</p>
+                    <p>Чтобы получить пример договора, оставьте,  пожалуйста,  свои контактные данные</p>
                     {this.mailNotification()}
                     <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                         <label>Ваш Email <span>*</span></label>
@@ -129,7 +129,7 @@ class ModalForm extends Component{
             return(
                 <div className="popup-form">
                     <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                    <p>Оставьте Ваши контакты и мы отправим Вам пример плана работ на электронную почту</p>
+                    <p>Чтобы получить пример плана работ, оставьте, пожалуйста, свои контактные данные</p>
                     {this.mailNotification()}
                     <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                         <label>Ваш Email <span>*</span></label>
@@ -145,7 +145,7 @@ class ModalForm extends Component{
             return(
                 <div className="popup-form">
                     <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                    <p>Оставьте Ваши контакты и мы отправим Вам пример отчета на электронную почту</p>
+                    <p>Чтобы получить пример нашего отчета,  оставьте,  пожалуйста,  свои контактные данные</p>
                     {this.mailNotification()}
                     <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                         <label>Ваш Email <span>*</span></label>

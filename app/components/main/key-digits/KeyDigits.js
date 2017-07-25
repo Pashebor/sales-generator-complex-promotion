@@ -36,7 +36,7 @@ class KeyDigits extends React.Component{
                         <p className="digits__text">Увеличение <br/> продолжительности посещения</p>
                     </div>
                     <div className="digits__item">
-                        <h3 className="digits__title"><span id="requests">21</span> <span id="requests2">600</span></h3>
+                        <h3 className="digits__title"><span id="requests">81</span> <span id="requests2">600</span></h3>
                         <p className="digits__text">Запросов наших клиентов в <br/> ТОП 10</p>
                     </div>
                     <div className="digits__item">

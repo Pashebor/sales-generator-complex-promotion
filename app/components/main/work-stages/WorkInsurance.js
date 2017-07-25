@@ -12,6 +12,7 @@ class WorkInsurance extends React.Component{
     orderWorkPlanHandler() {
         this.props.workPlanShow(true);
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('PLAN_RABOT');
     }
     render() {
         return (

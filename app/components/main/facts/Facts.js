@@ -10,7 +10,7 @@ const Facts = () => {
                         <div className="facts-info">
                             <div className="facts-info__item">
                                 <img src="images/similar-web.jpg" alt="SimilarWeb" title="SimilarWeb"/>
-                                <p>Онлайн сервис,  который позволяет анализировать  Интернет  трафик в разрезе регионов и тематик</p>
+                                <p>Сервис для анализа интернет трафика в разрезе регионов и тематик</p>
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/spy-work.jpg" alt="Spy Words" title="Spy Words"/>
@@ -26,7 +26,7 @@ const Facts = () => {
                             </div>
                             <div className="facts-info__item">
                                 <img src="images/key-collector.jpg" alt="KEY Collector" title="KEY Collector"  />
-                                <p>Программный комплекс, для оказания качественной помощи в создании семантического ядра сайта</p>
+                                <p>Программный комплекс для оказания помощи в создании семантического ядра сайта</p>
                             </div>
                         </div>
                     </div>
