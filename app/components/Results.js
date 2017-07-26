@@ -21,6 +21,7 @@ class Result extends Component{
 
     caseClickHandler(event){
         let array = [];
+        let highQualityImages = [];
 
         for (let image in this.refs) {
             if (this.refs.hasOwnProperty(image)) {
@@ -38,7 +39,9 @@ class Result extends Component{
             }
         }
 
-        this.props.openCase(array, true);
+        array.map(uri => highQualityImages.push(uri.replace('/images/', '/images/high-quality-cases/')));
+
+        this.props.openCase(highQualityImages, true);
     }
 
 
@@ -81,6 +84,13 @@ class Result extends Component{
                         <div>
                             <div className="results-info__row">
                                 <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image1" src="images/gd.jpg" alt="График роста сайта Генеральный дирекктор" title="График роста сайта Генеральный дирекктор" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
                                     <div className="results-info__column__item"><img ref="image6" src="images/bussines-resuourse.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
                                 </div>
                             </div>
@@ -106,13 +116,6 @@ class Result extends Component{
                                 </div>
                             </div>
                         </div>
-                    <div>
-                    <div className="results-info__row">
-                        <div className="results-info__column">
-                            <div className="results-info__column__item"><img ref="image1" src="images/gd.jpg" alt="График роста сайта Генеральный дирекктор" title="График роста сайта Генеральный дирекктор" onClick={this.caseClickHandler.bind(this)}/></div>
-                        </div>
-                    </div>
-                    </div>
                         <div>
                             <div className="results-info__row">
                                 <div className="results-info__column">
