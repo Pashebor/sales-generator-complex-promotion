@@ -10,9 +10,9 @@ class BringClients extends React.Component{
     btnSubmitHandler(e) {
         e.preventDefault();
         let formData = {'form-name': 'know-bottom'};
-
         formData.name = this.refs.name.value;
-        formData.phone = this.refs.phone.mask.getValue();
+        screen.width < 1024 ? formData.phone = this.refs.phone.mask.getValue() : formData.phone = this.refs.phone.value;
+
         this.props.sendClientsCallback(formData);
         yaCounter44418460.reachGoal('POLUCHIT_PREDLOJENIE');
     }
@@ -52,7 +52,10 @@ class BringClients extends React.Component{
                             </div>
                             <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
                                 <input className="form-control" placeholder="Имя *" type="text" ref="name" required/>
-                                <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
+                                {screen.width < 1024 ?
+                                    <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/> :
+                                    <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
+                                }
                                 <ScrollableAnchor id={'how-many-clients'}>
                                     <input type="submit" className="btn submit-btn"  value="Получить персональное предложение"/>
                                 </ScrollableAnchor>

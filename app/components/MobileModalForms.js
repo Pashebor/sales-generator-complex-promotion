@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, reportShow, showKnowDefaultForm} from '../actions/index';
 import { bindActionCreators } from 'redux';
-import MaskedInput from 'react-maskedinput';
 
-class ModalForm extends Component{
+class MobileModalForms extends Component{
     personalAgreement() {
         return (
             <div className="personal-data">
@@ -15,10 +14,10 @@ class ModalForm extends Component{
 
     isShow() {
         if (this.props.formState.modalShow) {
-             return {
-                 display: 'block',
-                 animation: 'popupAnimOpen 0.4s 1 linear'
-             };
+            return {
+                display: 'block',
+                animation: 'popupAnimOpen 0.4s 1 linear'
+            };
         } else {
             return {
                 animation: 'popupAnimClose 0.4s 1 linear',
@@ -41,7 +40,7 @@ class ModalForm extends Component{
         };
 
         if (response) {
-         return notification(response);
+            return notification(response);
         } else {
             return false;
         }
@@ -54,17 +53,17 @@ class ModalForm extends Component{
         if (this.props.formState.contract) {
             formData['form-name'] = 'contract-order';
             formData.email = this.refs.email.value;
-            formData.phone = this.refs.phone.mask.getValue();
+            formData.phone = this.refs.phone.value;
             this.props.sendCallback(formData);
         } else if (this.props.formState.workPlan) {
             formData['form-name'] = 'work-plan-order';
             formData.email = this.refs.email.value;
-            formData.phone = this.refs.phone.mask.getValue();
+            formData.phone = this.refs.phone.value;
             this.props.sendCallback(formData);
         } else if(this.props.formState.report) {
             formData['form-name'] = 'report-order';
             formData.email = this.refs.email.value;
-            formData.phone = this.refs.phone.mask.getValue();
+            formData.phone = this.refs.phone.value;
             this.props.sendCallback(formData);
         } else if (this.props.formState.knowDefault) {
             formData = {'form-name': 'know-default'};
@@ -74,7 +73,7 @@ class ModalForm extends Component{
             this.props.sendCallback(formData);
         } else {
             formData['name'] = this.refs['name'].value;
-            formData['phone'] = this.refs['phone'].mask.getValue();
+            formData['phone'] = this.refs['phone'].value;
             formData['comment'] = this.refs['comment'].value;
             this.props.sendCallback(formData);
         }
@@ -85,14 +84,14 @@ class ModalForm extends Component{
 
         if (this.props.formState.contract || this.props.formState.workPlan || this.props.formState.report) {
             this.refs.email.value = '';
-            this.refs.phone.mask.setValue('');
+            this.refs.phone.value = '';
         } else if (this.props.formState.knowDefault){
             for (let field in this.refs) {
                 this.refs[field].value = '';
             }
         } else {
             this.refs['name'].value = '';
-            this.refs['phone'].mask.setValue('');
+            this.refs['phone'].value = '';
             this.refs['comment'].value = '';
         }
         this.props.showModal(false);
@@ -119,7 +118,7 @@ class ModalForm extends Component{
                         <label>Ваш Email <span>*</span></label>
                         <input type="email" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
-                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/>
                         {this.personalAgreement()}
                         <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
@@ -135,7 +134,7 @@ class ModalForm extends Component{
                         <label>Ваш Email <span>*</span></label>
                         <input type="email" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
-                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/>
                         {this.personalAgreement()}
                         <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
@@ -151,7 +150,7 @@ class ModalForm extends Component{
                         <label>Ваш Email <span>*</span></label>
                         <input type="email" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
                         <label>Телефон <span>*</span></label>
-                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/>
                         {this.personalAgreement()}
                         <input type="submit" value='Отправить заявку' className="btn"/>
                     </form>
@@ -185,7 +184,7 @@ class ModalForm extends Component{
                         <label>Как к Вам обращаться?<span>*</span></label>
                         <input  type="text" ref="name" name="name" className="form-control" placeholder="Иванов Иван Иванович" required/>
                         <label>Телефон <span>*</span></label>
-                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/>
                         <label>Комментарий</label>
                         <textarea className="form-control" name="comment" ref="comment" placeholder="Мой сайт www.mysite.ru. Прошу связаться со мной в 14:30."></textarea>
                         {this.personalAgreement()}
@@ -214,4 +213,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, reportShow, showKnowDefaultForm}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileModalForms);
