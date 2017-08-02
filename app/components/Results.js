@@ -105,13 +105,6 @@ class Result extends Component{
                         <div>
                             <div className="results-info__row">
                                 <div className="results-info__column">
-                                    <div className="results-info__column__item"><img ref="image8" src="images/veronica.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="results-info__row">
-                                <div className="results-info__column">
                                     <div className="results-info__column__item"><img ref="image5" src="images/santech.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
                                 </div>
                             </div>
@@ -120,6 +113,13 @@ class Result extends Component{
                             <div className="results-info__row">
                                 <div className="results-info__column">
                                     <div className="results-info__column__item"><img ref="image7" src="images/word-deal.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image8" src="images/veronica.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
                                 </div>
                             </div>
                         </div>

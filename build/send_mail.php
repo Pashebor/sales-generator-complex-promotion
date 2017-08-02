@@ -21,6 +21,7 @@ require ('./phpmailer/PHPMailerAutoload.php');
  $mail->addAddress('ac@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('salesgenerates@mail.ru', 'Генератор продаж');
  $mail->addAddress('sd@salesgenerator.pro', 'Генератор продаж');
+ $mail->addAddress('1993belochka1993@list.ru', 'Генератор продаж');
  $mail->isHtml(true);
 
 
@@ -38,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
              break;
        case 'know-default':
            $mail->Subject = 'Узнать сколько клиентов мы можем привести Вам на сайт - "Комплексное продвиженике"';
-           $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Комментарий: '.$arrRequest['comment'].'</p></div>';
+           $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Комментарий: '.$arrRequest['comment'].'</p></div>';
            $mail->send();
            echo json_encode(["response" => true]);
            break;

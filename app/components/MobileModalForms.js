@@ -67,9 +67,9 @@ class MobileModalForms extends Component{
             this.props.sendCallback(formData);
         } else if (this.props.formState.knowDefault) {
             formData = {'form-name': 'know-default'};
-            for (let field in this.refs) {
-                formData[field] = this.refs[field].value;
-            }
+            formData['name'] = this.refs['name'].value;
+            formData['phone'] = this.refs['phone'].value;
+            formData['comment'] = this.refs['comment'].value;
             this.props.sendCallback(formData);
         } else {
             formData['name'] = this.refs['name'].value;
@@ -165,8 +165,8 @@ class MobileModalForms extends Component{
                     <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                         <label>Как к Вам обращаться?<span>*</span></label>
                         <input  type="text" ref="name" name="name" className="form-control" placeholder="Иванов Иван Иванович" required/>
-                        <label>Ваш Email <span>*</span></label>
-                        <input type="email" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Телефон <span>*</span></label>
+                        <input placeholder="+7(___) ___ __ __"  type="text" ref="phone" name="phone" required="true" className="form-control"/>
                         <label>Комментарий</label>
                         <textarea className="form-control" name="comment" ref="comment" placeholder="Мой сайт www.mysite.ru. Прошу связаться со мной в 14:30."></textarea>
                         {this.personalAgreement()}
