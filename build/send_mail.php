@@ -21,7 +21,7 @@ require ('./phpmailer/PHPMailerAutoload.php');
  $mail->addAddress('ac@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('salesgenerates@mail.ru', 'Генератор продаж');
  $mail->addAddress('sd@salesgenerator.pro', 'Генератор продаж');
- $mail->addAddress('1993belochka1993@list.ru', 'Генератор продаж');
+ $mail->addAddress('karnaushkina@salesgenerator.pro', 'Генератор продаж');
  $mail->isHtml(true);
 
 
@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($arrRequest)) {
      switch ($arrRequest['form-name']) {
       case 'callback':
-       $mail->Subject = 'Заказ аудита - обратный звонок "Комплексное продвиженике"';
+       $mail->Subject = 'Лендинг(Complex-promotion) - обратный звонок "Комплексное продвиженике"';
        $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Комментарий: '.$arrRequest['comment'].'</p></div>';
        $mail->send();
        echo json_encode(["response" => true]);
@@ -62,8 +62,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
              echo json_encode(["response" => true]);
              break;
          case 'know-bottom':
-             $mail->Subject = 'Заказ аудита - Футер "Комплексное продвиженике"';
-             $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+             $mail->Subject = 'Лендинг(Complex-promotion) - Футер "Комплексное продвиженике"';
+             $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';;
              $mail->send();
            echo json_encode(["response" => true]);
              break;
