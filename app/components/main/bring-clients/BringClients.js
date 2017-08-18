@@ -15,7 +15,6 @@ class BringClients extends React.Component{
 
         this.props.sendClientsCallback(formData);
         yaCounter44418460.reachGoal('POLUCHIT_PREDLOJENIE');
-        /*'oje'*/
     }
 
     clientsNotification() {
