@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {showModal, sendCallback, nullCallbacks} from '../actions/index';
+import {showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, reportShow, showKnowDefaultForm} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 
 class ModalForm extends Component{
+    personalAgreement() {
+        return (
+            <div className="personal-data">
+                <input type="checkbox" className="form-control" required/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
+            </div>
+        );
+    }
+
     isShow() {
         if (this.props.formState.modalShow) {
              return {
@@ -41,56 +49,156 @@ class ModalForm extends Component{
 
     btnSubmitHandler(e) {
         e.preventDefault();
-        if (!this.props.formState.typeRate && !this.props.formState.auditType) {
-            let formData = {'form-name': 'callback'};
+        let formData = {'form-name': 'callback'};
+
+        if (this.props.formState.contract) {
+            formData['form-name'] = 'contract-order';
+            formData.email = this.refs.email.value;
+            formData.phone = this.refs.phone.mask.getValue();
+            this.props.sendCallback(formData);
+        } else if (this.props.formState.workPlan) {
+            formData['form-name'] = 'work-plan-order';
+            formData.email = this.refs.email.value;
+            formData.phone = this.refs.phone.mask.getValue();
+            this.props.sendCallback(formData);
+        } else if(this.props.formState.report) {
+            formData['form-name'] = 'report-order';
+            formData.email = this.refs.email.value;
+            formData.phone = this.refs.phone.mask.getValue();
+            this.props.sendCallback(formData);
+        } else if (this.props.formState.knowDefault) {
+            formData = {'form-name': 'know-default'};
             for (let field in this.refs) {
-                formData[field] = this.refs[field].mask.getValue();
+                formData[field] = this.refs[field].value;
             }
             this.props.sendCallback(formData);
-        } else if(this.props.formState.typeRate && !this.props.formState.auditType) {
-            let formData = {'form-name': 'rates', 'rate': this.props.formState.typeRate};
-            for (let field in this.refs) {
-                formData[field] = this.refs[field].mask.getValue();
-            }
-            this.props.sendCallback(formData);
-        } else if(!this.props.formState.typeRate && this.props.formState.auditType) {
-            let formData = {'form-name': 'audits', 'type': this.props.formState.auditType};
-            for (let field in this.refs) {
-                formData[field] = this.refs[field].mask.getValue();
-            }
+        } else {
+            formData['name'] = this.refs['name'].value;
+            formData['phone'] = this.refs['phone'].mask.getValue();
+            formData['comment'] = this.refs['comment'].value;
             this.props.sendCallback(formData);
         }
     }
 
     closeModalHandler(e) {
         e.stopPropagation();
-        for (let fieldClear in this.refs) {
-            this.refs[fieldClear].mask.setValue('');
+
+        if (this.props.formState.contract || this.props.formState.workPlan || this.props.formState.report) {
+            this.refs.email.value = '';
+            this.refs.phone.mask.setValue('');
+        } else if (this.props.formState.knowDefault){
+            for (let field in this.refs) {
+                this.refs[field].value = '';
+            }
+        } else {
+            this.refs['name'].value = '';
+            this.refs['phone'].mask.setValue('');
+            this.refs['comment'].value = '';
         }
         this.props.showModal(false);
         this.props.nullCallbacks(null, null);
+        this.props.contractShow(false);
+        this.props.workPlanShow(false);
+        this.props.reportShow(false);
+        this.props.showKnowDefaultForm(false);
+
     }
 
     formClickHandler(e){
         e.stopPropagation();
         this.props.showModal(true);
     }
-
+    formVariants() {
+        if (this.props.formState.contract) {
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Оставьте Ваши контакты и мы отправим Вам пример договора на электронную почту</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Ваш Email <span>*</span></label>
+                        <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Телефон <span>*</span></label>
+                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
+                    </form>
+                </div>
+            )
+        } else if (this.props.formState.workPlan) {
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Оставьте Ваши контакты и мы отправим Вам пример плана работ на электронную почту</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Ваш Email <span>*</span></label>
+                        <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Телефон <span>*</span></label>
+                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
+                    </form>
+                </div>
+            )
+        } else if (this.props.formState.report) {
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Оставьте Ваши контакты и мы отправим Вам пример отчета на электронную почту</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Ваш Email <span>*</span></label>
+                        <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Телефон <span>*</span></label>
+                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
+                    </form>
+                </div>
+            )
+        } if (this.props.formState.knowDefault){
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Узнать сколько клиентов мы можем привести Вам на сайт</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Как к Вам обращаться?<span>*</span></label>
+                        <input  type="text" ref="name" name="name" className="form-control" placeholder="Иванов Иван Иванович" required/>
+                        <label>Ваш Email <span>*</span></label>
+                        <input type="text" ref="email" name="email" className="form-control" required="true" placeholder="example@mail.ru"/>
+                        <label>Комментарий</label>
+                        <textarea className="form-control" name="comment" ref="comment" placeholder="Мой сайт www.mysite.ru. Прошу связаться со мной в 14:30."></textarea>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
+                    </form>
+                </div>
+            )
+        } else {
+            return(
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    <p>Оформление заявки</p>
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        <label>Как к Вам обращаться?<span>*</span></label>
+                        <input  type="text" ref="name" name="name" className="form-control" placeholder="Иванов Иван Иванович" required/>
+                        <label>Телефон <span>*</span></label>
+                        <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <label>Комментарий</label>
+                        <textarea className="form-control" name="comment" ref="comment" placeholder="Мой сайт www.mysite.ru. Прошу связаться со мной в 14:30."></textarea>
+                        {this.personalAgreement()}
+                        <input type="submit" value='Отправить заявку' className="btn"/>
+                    </form>
+                </div>
+            )
+        }
+    }
     render() {
         return(
             <div className="popup-overlay" style={this.isShow()} onClick={this.closeModalHandler.bind(this)}>
-              <div className="popup-form">
-                  <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                  <p>Оформление заявки</p>
-                  {this.mailNotification()}
-                  <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
-                      <label>Во сколько Вам позвонить?</label>
-                      <MaskedInput  mask="11:11"type="text" ref="callback" name="callback" className="form-control"/>
-                      <label>Телефон <span>*</span></label>
-                      <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                      <input type="submit" value='Отправить заявку!' className="btn"/>
-                  </form>
-              </div>
+                {this.formVariants()}
             </div>
         )
     }
@@ -103,7 +211,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, sendCallback, nullCallbacks}, dispatch);
+    return bindActionCreators({showModal, sendCallback, nullCallbacks, contractShow, workPlanShow, reportShow, showKnowDefaultForm}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);

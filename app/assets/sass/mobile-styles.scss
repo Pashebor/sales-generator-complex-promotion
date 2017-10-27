@@ -1,30 +1,91 @@
 @media screen and (min-width: 320px) and (max-width: 500px) {
   .btn--callback{
     margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
+
+  .header, .work-stages, .guarantees, .wdyg, .cl-words, .results, .recomendations, .b-clients, .facts{
+    overflow: hidden;
+  }
+  .work-stages, .guarantees, .wdyg, .results, .cl-words, .recomendations, .b-clients, .facts{
+    padding-top: 30px;
+  }
+
+  .work-stages{
+    &__title{
+      font-size: 20px;
+    }
+  }
+
+  .approach{
+    padding-bottom: 15px;
+    .slick-slide{
+      height: 100%;
+    }
+    &-types{
+      background: none;
+      margin-bottom: 10px;
+      &-wrapper{
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+      &__item{
+        width: 45%;
+        @for $item from 1 through 7 {
+          &:nth-child(#{$item}) {
+            position: static;
+          }
+        }
+        img{
+          width: 74px;
+          height: 74px;
+        }
+      }
+    }
+    &-slider{
+      &__nav{
+        display: none;
+      }
+      &__block{
+        width: 100%;
+      }
+      &__item{
+        height: auto;
+      }
+    }
+  }
+  .main{
+    margin: 0;
+  }
+
   .nav{
     flex-direction: column;
     &__tel{
       margin-left: 0px;
       width: 100%;
       text-align: center;
+      &::before{
+        left: 20%;
+      }
     }
     &__title{
       text-align: center;
       width: 100%;
       margin-left: 0px;
       left: 0;
-      padding: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
     }
   }
 
   .header{
     &__content{
-      padding: 20px 0 0 0;
+      padding: 20px 15px 0 15px;
       &-title{
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
-        line-height: 40px;
+        line-height: 30px;
       }
       &-text{
         text-align: center;
@@ -33,7 +94,8 @@
       }
     }
     &-content-background{
-      background: url("../images/headerbackground.png") no-repeat 10% 100%;
+      background-size: cover;
+      background: url("../images/headerbackground.png") no-repeat 70% 50%;
     }
   }
   .know-form{
@@ -41,6 +103,7 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 44px;
 
     input[type="text"], input[type="button"], input[type="submit"]{
       width: 85%;
@@ -57,34 +120,21 @@
   }
 
   .separatorbottom {
-    .bigcircle-bottom{
-      width: 107%;
-      right: 12px;
+    width: 140%;
+    height: 33px;
+    #bottom-triangle{
+      width: 140%;
+      height: 33px;
+      position: relative;
+      right: 35%;
     }
   }
 
-  .seo{
+  .guarantees{
     &__title{
-      font-size: 32px;
+      font-size: 20px;
+      line-height: 25px;
     }
-    &__partitions{
-      flex-flow: column;
-      align-items: center;
-      &__header{
-        font-size: 22px;
-      }
-      &-items{
-        font-size: 18px;
-        display: flex;
-      }
-    }
-    @for $partiton from 1 through 2 {
-      &__partition--#{$partiton} {
-        width: 95%;
-      }
-    }
-  }
-  .audit{
     &-info{
       flex-flow: column;
       margin: 20px 0 0 0;
@@ -96,49 +146,143 @@
     }
   }
 
-  .include{
-   /* margin: 40px 0 0 0;*/
-    &-materials{
-      flex-flow: column;
-      &__list{
-        width: 100%;
+  .work-stages{
+    .btn{
+      white-space: normal;
+    }
+  }
+  .stage-count:nth-child(2n+1){
+    .stage{
+      .stage__description{
+        flex-flow: column;
       }
-      &__desc{
-        width: 100%;
-        .btn{
-          white-space: normal;
+    }
+  }
+  .stage-count{
+    .stage{
+      padding: 0 5px;
+      .stage__description{
+        flex-flow: column;
+        ul{
+          width: 100%;
+        }
+        figure{
+          width: 100%;
+          img{
+            width: 95%;
+          }
         }
       }
     }
   }
 
+  .stages{
+    padding: 0;
+    &-links {
+      flex: 1 100%;
+      &__item{
+        font-size: 16px;
+        strong{
+          font-size: 20px;
+        }
+        &--active{
+          color: rgb(0, 114, 188);
+          font-family: $headers-font-regular;
+          animation: link-anim 0.7s 1 linear;
+          p::after{
+            position: relative;
+            top: 5px;
+            left: 20px;
+            font-family: FontAwesome;
+            content: '';
+            font-size: 16px;
+            font-weight: 100;
+            animation: none;
+          }
+        }
+    }
+    }
+    &__description {
+      flex: 1 100%;
+      height: auto;
+    }
+  }
+
+  .key-digits{
+    .digits{
+      &__item{
+        width: 100%;
+      }
+    }
+  }
+
+  .insurance{
+    &__wrapper{
+      padding: 33px 10px;
+    }
+    &__block{
+      padding: 20px 5px;
+    }
+  }
   .results{
+    &__title{
+      margin-top: 0;
+    }
+    &__subtitle{
+      font-size: 15px;
+    }
     &-info{
       flex-flow: row wrap;
-      &__item{
+      &__column{
         width: 100%;
+      }
+    }
+    .btn{
+      margin: 15px auto 0 auto;
+    }
+  }
+  .recomendations-info{
+    @for $item from 1 through 5 {
+      &__item:nth-child(#{$item}) {
+        margin-bottom: 36px;
       }
     }
   }
 
-  .proposition{
-    &-block{
-      flex-flow: column;
-      &__item{
-        margin-top: 20px;
-        width: 100%;
-        .btn{
-          white-space: normal;
-          width: 80%;
-        }
-      }
-      &__item:last-child{
-        form{
-          width: 90%;
+  .cl-words-info__director, .cl-words-info__desc{
+    width: 100%;
+  }
+
+  .facts-info{
+    flex-flow: column;
+    margin: 30px 0 30px 0;
+    &__item{
+      width: 100%;
+      padding: 0 10px;
+      &:last-child{
+        p{
+          padding: 0 10px;
+          margin-left: -8.5%;
         }
       }
     }
   }
+
+  .b-clients {
+    .know-form {
+      margin-top: 20px;
+      input[type="text"], input[type=button] {
+        width: 90%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .b-clients .know-form input[type="text"]:nth-child(2){
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
 
   .footer{
     &-container{
@@ -160,11 +304,11 @@
     .top-button-block{
       bottom: 40px;
       .top-button{
-        width: 40px;
-        height: 40px;
-        line-height: 35px;
+        width: 60px;
+        height: 60px;
+        line-height: 55px;
         &::before{
-          font-size: 35px;
+          font-size: 50px;
         }
       }
     }
@@ -172,6 +316,7 @@
 
   .popup-overlay .popup-form{
     width: 90%;
+    top: 3%;
     input[type="submit"]{
       width: 100%;
     }
@@ -195,8 +340,9 @@
 
   .submit-btn{
     margin-left: 0 !important;
-    width: 50% !important;
-    padding: 8px 28px !important;
+    width: 85% !important;
+    padding: 5px 0 !important;
+    white-space: normal;
   }
 
 

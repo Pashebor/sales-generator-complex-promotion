@@ -1,23 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {setOpacity} from './../actions/index';
+import {setStyles, setWindowPos} from './../actions/index';
 
 class ButtonToTop extends React.Component{
-    constructor(props) {
-        super();
-        this.setOpacity = props.setOpacity;
-    }
     componentDidMount() {
-        window.onscroll = () => {
+        window.addEventListener('scroll', () => {
+            this.props.setWindowPos(window.pageYOffset);
             if (window.pageYOffset >= 1200) {
-                this.setOpacity('0.8');
-                this.refs.btn.style = "pointer-events: auto; cursor: pointer;";
+                this.props.setStyles('0.8', 'auto', 'pointer');
             } else {
-                this.setOpacity('0');
-                this.refs.btn.style = "pointer-events: none; cursor: default;";
+                this.props.setStyles('0', 'none', 'default');
             }
-        }
+        })
     }
 
     scrollToTopHandler(e) {
@@ -33,7 +28,7 @@ class ButtonToTop extends React.Component{
     }
     render() {
         return(
-            <aside className="top-button-block"  style={{opacity: `${this.props.opacity}`}}>
+            <aside className="top-button-block" style={{opacity: this.props.styles.opacity, pointerEvents: this.props.styles.pointerEvents, cursor: this.props.styles.cursor}}>
                 <div className="top-button" ref="btn" onClick={this.scrollToTopHandler.bind(this)}></div>
             </aside>
         )
@@ -43,12 +38,12 @@ class ButtonToTop extends React.Component{
 
 const mapStateToProps = (store) => {
     return {
-        opacity: store.salesReducer.opacity
+        styles: store.salesReducer.styles
     }
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({setOpacity}, dispatch);
+    return bindActionCreators({setStyles, setWindowPos}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ButtonToTop);

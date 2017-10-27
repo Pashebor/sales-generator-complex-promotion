@@ -1,0 +1,172 @@
+.work-stages{
+  @extend .guarantees;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 44px;
+  background-color: white;
+  counter-reset: stage;
+  &__title{
+    font-family: $headers-font-regular;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(51, 51, 51);
+    margin-top: 0;
+  }
+  .arrow-down{
+    display: block;
+    margin: auto;
+    width: 70px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    &:hover{
+      transform: translateY(5px);
+      text-shadow: 0 0 25px rgb(142, 201, 255);
+    }
+    &::before{
+      font-family: FontAwesome;
+      content: '\f107';
+      color: black;
+      font-size: 65px;
+      font-weight: 100;
+      cursor: pointer;
+    }
+
+  }
+  .btn-block{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    span{
+      margin: auto;
+      font-family: $primary-font;
+    }
+  }
+  .separatorbottom{
+    #bottom-triangle{
+      fill: rgba(3, 3, 3, 1);
+    }
+  }
+  .know-form{
+    margin-bottom: 44px;
+  }
+}
+
+.stage-count:not(:nth-child(2)) {
+  .stage{
+    margin-top: 0;
+  }
+}
+
+.stage-count:nth-child(2){
+  .stage{
+    margin-top: 30px;
+  }
+}
+
+.stages{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  color: rgb(51, 51, 51);
+  border-radius: 21px;
+  padding: 20px 0;
+  align-items: center;
+  margin-top: 27px;
+  &-links {
+   flex: 1 50%;
+    &__item{
+      font-family: $headers-font-regular;
+      font-size: 22px;
+      color: rgb(137, 137, 137);
+      text-decoration: none !important;
+      strong{
+        font-size: 32px;
+        font-family: $headers-font-bold;
+      }
+      &--active{
+        color: rgb(0, 114, 188);
+        font-family: $headers-font-bold;
+        animation: link-anim 0.7s 1 linear;
+        p::after{
+          position: relative;
+          top: 5px;
+          left: 20px;
+          font-family: FontAwesome;
+          content: '\f178';
+          font-size: 30px;
+          font-weight: 100;
+          animation: arrow-anim 1.2s infinite linear;
+        }
+      }
+    }
+  }
+  &__description{
+    display: flex;
+    align-items: center;
+    flex: 1 40%;
+    height: 290px;
+    animation: fade-in 0.8s 1 linear;
+    &-wrapper{
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 25px 15px;
+      color: rgb(51, 51, 51);
+      border-radius: 0px;
+      padding: 15px;
+    }
+    ul{
+      font-family: $headers-font-regular;
+      font-size: 16px;
+      margin: auto;
+      li{
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.insurance{
+  margin-top: 70px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; color: rgb(255, 255, 255);
+  border-radius: 0px;
+  background-image: url(../images/insurance.jpg);
+  &__title{
+    @extend  .work-stages__title;
+    color: white;
+    margin-top: 10px;
+  }
+  &__wrapper{
+    background-color: rgba(46, 46, 46, 0.92);
+    padding: 33px 60px;
+  }
+
+  &__block{
+    padding: 20px 0;
+    border: 1px solid white;
+  }
+  &__text{
+    font-family: $headers-font-regular;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    margin: 30px 0;
+  }
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes arrow-anim {
+  0% {left: 20px;}
+  50% {left: 30px;}
+  100% {left: 20px;}
+}
+
+@keyframes link-anim {
+  from {color: rgb(137, 137, 137);}
+  to {color: rgb(0, 114, 188);}
+}

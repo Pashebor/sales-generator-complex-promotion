@@ -6,16 +6,63 @@ export const OPEN_FULL_CASE = 'openCase';
 export const OPEN_SLIDER = 'openSlider';
 export const SEND_MESSAGE_SUCCESS = 'sendRequestCallback';
 export const SEND_CLIENTS_SUCCESS = 'knowClients';
-export const RATE_TYPE = 'setTypeRate';
-export const AUDITS_REQUEST = 'setTypeAudit';
 export const NULL_CALLBACKS = 'nullCallbacks';
-export const SCROLLER_OPACITY = 'setOpacity';
+export const SCROLLER_OPACITY = 'setStyles';
+export const CONTRACT_FORM = 'contractShow';
+export const WORK_PLAN_FORM = 'workPlanShow';
+export const REPORT_FORM = 'REPORT_FORM';
+export const SET_WINDOW_POS = 'SET_WINDOW_POS';
+export const SET_APPROACH_ITEM = 'SET_APPROACH_ITEM';
+export const KNOW_DEFAULT_FORM = 'KNOW_DEFAULT_FORM';
 /*ACTIONS*/
 
-export const setOpacity = (opacity) => {
+export const showKnowDefaultForm = (isShow) => {
+    return{
+        type: KNOW_DEFAULT_FORM,
+        show: isShow
+    }
+}; 
+
+export const setApproachItem = (item) => {
+    return{
+        type: SET_APPROACH_ITEM,
+        payload: item
+    }
+};
+
+export const setWindowPos = (value) => {
+    return{
+        type: SET_WINDOW_POS,
+        position: value
+    }
+}
+
+export const reportShow = (value) => {
+    return {
+        type: REPORT_FORM,
+        show: value
+    }
+}
+
+
+export const workPlanShow = (value) => {
+    return{
+        type: WORK_PLAN_FORM,
+        show: value
+    }
+};
+
+export const contractShow = (value) => {
+    return{
+        type: CONTRACT_FORM,
+        show: value
+    }
+};
+
+export const setStyles = (opacity, pointerEvents, cursor) => {
         return {
             type: SCROLLER_OPACITY,
-            opacity: opacity
+            payload: {opacity: opacity, pointerEvents: pointerEvents, cursor: cursor }
         }
 };
 
@@ -42,19 +89,6 @@ export const openSlider = (uri,logicValue) => {
    }
 };
 
-export const setTypeRate = type => {
-    return{
-        type: RATE_TYPE,
-        payload: type
-    }    
-};
-
-export const setTypeAudit = type => {
-    return{
-        type: AUDITS_REQUEST,
-        payload: type
-    }
-};
 
 export const nullCallbacks = (val1, val2) => {
    return{

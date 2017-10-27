@@ -1,3 +1,4 @@
+
 <?php
 require ('./phpmailer/PHPMailerAutoload.php');
 
@@ -18,6 +19,8 @@ require ('./phpmailer/PHPMailerAutoload.php');
  $mail->addAddress('pm@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('vip@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('ac@salesgenerator.pro', 'Генератор продаж');
+ $mail->addAddress('salesgenerates@mail.ru', 'Генератор продаж');
+ $mail->addAddress('sd@salesgenerator.pro', 'Генератор продаж');
  $mail->isHtml(true);
 
 
@@ -28,28 +31,40 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($arrRequest)) {
      switch ($arrRequest['form-name']) {
       case 'callback':
-       $mail->Subject = 'Заказ аудита - обратный звонок';
-       $mail->Body = '<div><p>Время звонка: '.$arrRequest['callback'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+       $mail->Subject = 'Заказ аудита - обратный звонок "Комплексное продвиженике"';
+       $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Комментарий: '.$arrRequest['comment'].'</p></div>';
        $mail->send();
        echo json_encode(["response" => true]);
              break;
-      case 'know':
-       $mail->Subject = 'Заказ аудита - первый экран';
-       $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
-       $mail->send();
-       echo json_encode(["response" => true]);
+       case 'know-default':
+           $mail->Subject = 'Узнать сколько клиентов мы можем привести Вам на сайт - "Комплексное продвиженике"';
+           $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Комментарий: '.$arrRequest['comment'].'</p></div>';
+           $mail->send();
+           echo json_encode(["response" => true]);
+           break;
+       case 'contract-order':
+           $mail->Subject = 'Заказ примера договора из комплексного продвижения';
+           $mail->Body = '<div><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+           $mail->send();
+           echo json_encode(["response" => true]);
              break;
-       case 'rates':
-        $mail->Subject = 'Заказ аудита - тариф '.$arrRequest['rate'];
-        $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Время звонка: '.$arrRequest['callback'].'</p><p>Тариф: '.$arrRequest['rate'].'</p></div>';
-        $mail->send();
-        echo json_encode(["response" => true]);
+       case 'work-plan-order':
+           $mail->Subject = 'Заказ примера плана работ из комплексного продвижения';
+           $mail->Body = '<div><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+           $mail->send();
+           echo json_encode(["response" => true]);
              break;
-       case 'audits':
-        $mail->Subject = 'Заказ аудита - второй экран '.$arrRequest['rate'];
-        $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Время звонка: '.$arrRequest['callback'].'</p><p>Тема: '.$arrRequest['type'].'</p></div>';
-        $mail->send();
-        echo json_encode(["response" => true]);
+         case 'report-order':
+             $mail->Subject = 'Заказ примера нашего отчета - "Комплексное продвижение"';
+             $mail->Body = '<div><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+             $mail->send();
+             echo json_encode(["response" => true]);
+             break;
+         case 'know-bottom':
+             $mail->Subject = 'Заказ аудита - Футер "Комплексное продвиженике"';
+             $mail->Body = '<div><p>Имя клиента: '.$arrRequest['name'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+             $mail->send();
+           echo json_encode(["response" => true]);
              break;
      }
     } else {
